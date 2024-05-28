@@ -207,16 +207,16 @@ public class App extends Application {
         signUp.getStyleClass().add("buttonLogin");
         signUp.relocate(275, 410);
         signUp.setOnAction(e -> {
-            String fullname = fullnameInput.getText();
-            String username = usernameInput.getText();
-            String password = passwordInput.getText();
-            String repassword = rePasswordInput.getText();
-            String phonenumber = phoneNumberInput.getText();
+            String fullname = tabelFullname.getText();
+            String username = tabelUsername.getText();
+            String password = tabelPassword.getText();
+            String repassword = tabelRepassword.getText();
+            String phonenumber = tabelPhonenumber.getText();
 
             if (fullname.isEmpty() || username.isEmpty() || password.isEmpty() || repassword.isEmpty() || phonenumber.isEmpty()) {
                 error1.setText("Data must be required!");
                 // return;
-            } if (DbConfig.validasiRegister(fullname, phonenumber, password, repassword, username)) {
+            } if (DbConfig.validasiRegister(fullname, phonenumber, username, password, repassword)) {
                 stage.setScene(registerSuccess(stage));
             } else {
                 error1.setText("Registered Failed. Data must be correct");}

@@ -43,7 +43,7 @@ public class DbConfig {
     }
 
     public static boolean validasiRegister(String fullname, String phonenumber, String username, String password, String repassword) {
-        query = "INSERT INTO users (fullname, phonenumber, username, password, repassword) VALUES (?, ?, ?, 'users')";
+        query = "INSERT INTO users (fullname, phonenumber, username, password, repassword) VALUES (?, ?, ?, ?, ?)";
         try {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
