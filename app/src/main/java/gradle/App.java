@@ -245,7 +245,7 @@ public class App extends Application {
                 stage.setScene(registerSuccess(stage));
             } else {
                 error1.setText("Registration Failed. Please check your data");}
-                error1.relocate(250, 400);
+                error1.relocate(247, 450);
         });
 
         Pane root = new Pane();
