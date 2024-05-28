@@ -186,10 +186,10 @@ public class App extends Application {
         tabelPassword.getStyleClass().add("tabelInput");
 
         Label phoneNumberInput = new Label("Phone Number");
-        phoneNumberInput.relocate(110, 305);
+        phoneNumberInput.relocate(110, 230);
         phoneNumberInput.getStyleClass().add("judulInput");
         TextField tabelPhonenumber = new TextField();
-        tabelPhonenumber.relocate(110, 325);
+        tabelPhonenumber.relocate(110, 250);
         tabelPhonenumber.getStyleClass().add("tabelInput");
 
         Label rePasswordInput = new Label("Re-Password");
@@ -207,18 +207,16 @@ public class App extends Application {
         signUp.getStyleClass().add("buttonLogin");
         signUp.relocate(275, 410);
         signUp.setOnAction(e -> {
-            String fullname = fullnameInput.getText();
-            String username = usernameInput.getText();
-            String password = passwordInput.getText();
-            String repassword = rePasswordInput.getText();
-            String phonenumber = phoneNumberInput.getText();
+            String fullname = tabelFullname.getText();
+            String username = tabelUsername.getText();
+            String password = tabelPassword.getText();
+            String repassword = tabelRepassword.getText();
+            String phonenumber = tabelPhonenumber.getText();
 
             if (fullname.isEmpty() || username.isEmpty() || password.isEmpty() || repassword.isEmpty() || phonenumber.isEmpty()) {
                 error1.setText("Data must be required!");
                 // return;
-            }
-
-            if (DbConfig.validasiRegister(fullname, phonenumber, password, repassword, username)) {
+            } if (DbConfig.validasiRegister(fullname, phonenumber, username, password, repassword)) {
                 stage.setScene(registerSuccess(stage));
             } else {
                 error1.setText("Registration Failed. Please check your data");}
