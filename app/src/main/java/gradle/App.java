@@ -12,6 +12,8 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -28,18 +30,26 @@ public class App extends Application {
     }
 
     private Scene mainScene(Stage stage) {
-        Label aplikasiMy = new Label("My");
-        aplikasiMy.getStyleClass().add("mylifestyle");
-        aplikasiMy.relocate(80, 200);
-        Label aplikasiLifeStyle = new Label("LifeStyle");
-        aplikasiLifeStyle.getStyleClass().add("mylifestyle");
-        aplikasiLifeStyle.relocate(95, 245);
+        Image logo = new Image(getClass().getResourceAsStream("/Style/foto/logo2.jpg"));
+        ImageView viewLogo = new ImageView(logo);
+        viewLogo.setPreserveRatio(true);
+        viewLogo.setFitWidth(270);
+        viewLogo.setFitHeight(270);
+        viewLogo.relocate(55, 120);
+
+        // Label aplikasiMy = new Label("My");
+        // aplikasiMy.getStyleClass().add("mylifestyle");
+        // aplikasiMy.relocate(80, 200);
+        // Label aplikasiLifeStyle = new Label("LifeStyle");
+        // aplikasiLifeStyle.getStyleClass().add("mylifestyle");
+        // aplikasiLifeStyle.relocate(95, 245);
+        
         Label deskripsi1 = new Label("Routine Checking Application");
         deskripsi1.getStyleClass().add("deskripsiMylifestyle1");
-        deskripsi1.relocate(80, 300);
+        deskripsi1.relocate(75, 350);
         Label deskripsi2 = new Label("It's time to start a healthy routinity");
         deskripsi2.getStyleClass().add("deskripsiMylifestyle2");
-        deskripsi2.relocate(80, 323);
+        deskripsi2.relocate(81, 375);
 
         Rectangle rectangle = new Rectangle(320, 450);
         rectangle.setFill(Color.web("#1A28A3"));
@@ -109,8 +119,11 @@ public class App extends Application {
             }
         });
 
+        Image imageIcon = new Image(getClass().getClassLoader().getResourceAsStream("Style/foto/logo.jpg"));
+            stage.getIcons().add(imageIcon);
+
         Pane root = new Pane();
-        root.getChildren().addAll(rectangle, aplikasiMy, aplikasiLifeStyle, deskripsi1, deskripsi2, signIn, usernameJudul, garisUsername, passwordJudul, garisPassword, buttonLogin, signUp, usernameInput, passwordInput, error);
+        root.getChildren().addAll(rectangle, viewLogo,  deskripsi1, deskripsi2, signIn, usernameJudul, garisUsername, passwordJudul, garisPassword, buttonLogin, signUp, usernameInput, passwordInput, error);
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
@@ -193,15 +206,26 @@ public class App extends Application {
         tabelPhonenumber.getStyleClass().add("tabelInput");
 
         Label rePasswordInput = new Label("Re-Password");
-        rePasswordInput.relocate(390, 305);
+        rePasswordInput.relocate(250, 305);
         rePasswordInput.getStyleClass().add("judulInput");
         PasswordField tabelRepassword = new PasswordField();
-        tabelRepassword.relocate(390, 325);
+        tabelRepassword.relocate(250, 325);
         tabelRepassword.getStyleClass().add("tabelInput");
         
         Label error1 = new Label();
-        error1.getStyleClass().add("error");
+        error1.getStyleClass().add("warning");
         error1.relocate(190, 300);
+
+        Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/exit.jpg"));
+        ImageView imageBack = new ImageView(logoBack);
+        imageBack.setPreserveRatio(true);
+        imageBack.setFitWidth(60);
+        imageBack.setFitHeight(60);
+        Button btnBack = new Button();
+        btnBack.setGraphic(imageBack);
+        btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+        btnBack.relocate(75, 450);
+        btnBack.setOnAction(e -> stage.setScene(mainScene(stage)));
 
         Button signUp = new Button("Sign Up");
         signUp.getStyleClass().add("buttonLogin");
@@ -215,15 +239,17 @@ public class App extends Application {
 
             if (fullname.isEmpty() || username.isEmpty() || password.isEmpty() || repassword.isEmpty() || phonenumber.isEmpty()) {
                 error1.setText("Data must be required!");
-                // return;
+                error1.relocate(305, 450);
+                return;
             } if (DbConfig.validasiRegister(fullname, phonenumber, username, password, repassword)) {
                 stage.setScene(registerSuccess(stage));
             } else {
                 error1.setText("Registration Failed. Please check your data");}
+                error1.relocate(250, 400);
         });
 
         Pane root = new Pane();
-        root.getChildren().addAll(rectangle, signUp, registerLabel, fullnameInput, tabelFullname, usernameInput, tabelUsername, passwordInput, tabelPassword, phoneNumberInput, tabelPhonenumber, rePasswordInput, tabelRepassword, error1);
+        root.getChildren().addAll(rectangle, signUp, btnBack, registerLabel, fullnameInput, tabelFullname, usernameInput, tabelUsername, passwordInput, tabelPassword, phoneNumberInput, tabelPhonenumber, rePasswordInput, tabelRepassword, error1);
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
