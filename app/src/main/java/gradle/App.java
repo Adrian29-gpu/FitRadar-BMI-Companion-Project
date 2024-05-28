@@ -221,7 +221,7 @@ public class App extends Application {
             if (DbConfig.validasiRegister(fullname, phonenumber, password, repassword, username)) {
                 stage.setScene(registerSuccess(stage));
             } else {
-                error1.setText("Registered Failed. Data must be correct");}
+                error1.setText("Registration Failed. Please check your data");}
         });
 
         Pane root = new Pane();
