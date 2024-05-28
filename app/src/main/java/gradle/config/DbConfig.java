@@ -52,9 +52,10 @@ public class DbConfig {
             preparedStatement.setString(3, username);
             preparedStatement.setString(4, password);
             preparedStatement.setString(5, repassword);
-            // preparedStatement.executeUpdate();
-            return true;
-        } catch (Exception e) {
+            int rowsInserted = preparedStatement.executeUpdate();
+            return rowsInserted > 0;
+            // return true;
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;

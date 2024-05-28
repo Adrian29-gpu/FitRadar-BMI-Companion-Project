@@ -186,10 +186,10 @@ public class App extends Application {
         tabelPassword.getStyleClass().add("tabelInput");
 
         Label phoneNumberInput = new Label("Phone Number");
-        phoneNumberInput.relocate(110, 305);
+        phoneNumberInput.relocate(110, 230);
         phoneNumberInput.getStyleClass().add("judulInput");
         TextField tabelPhonenumber = new TextField();
-        tabelPhonenumber.relocate(110, 325);
+        tabelPhonenumber.relocate(110, 250);
         tabelPhonenumber.getStyleClass().add("tabelInput");
 
         Label rePasswordInput = new Label("Re-Password");
@@ -216,9 +216,7 @@ public class App extends Application {
             if (fullname.isEmpty() || username.isEmpty() || password.isEmpty() || repassword.isEmpty() || phonenumber.isEmpty()) {
                 error1.setText("Data must be required!");
                 // return;
-            }
-
-            if (DbConfig.validasiRegister(fullname, phonenumber, password, repassword, username)) {
+            } if (DbConfig.validasiRegister(fullname, phonenumber, password, repassword, username)) {
                 stage.setScene(registerSuccess(stage));
             } else {
                 error1.setText("Gagal mendaftar. Pastikan data yang diisi benar!");}
