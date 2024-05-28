@@ -219,7 +219,7 @@ public class App extends Application {
             } if (DbConfig.validasiRegister(fullname, phonenumber, password, repassword, username)) {
                 stage.setScene(registerSuccess(stage));
             } else {
-                error1.setText("Gagal mendaftar. Pastikan data yang diisi benar!");}
+                error1.setText("Registered Failed. Data must be correct");}
         });
 
         Pane root = new Pane();
