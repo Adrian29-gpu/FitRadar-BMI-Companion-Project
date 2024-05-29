@@ -36,13 +36,6 @@ public class App extends Application {
         viewLogo.setFitWidth(270);
         viewLogo.setFitHeight(270);
         viewLogo.relocate(55, 120);
-
-        // Label aplikasiMy = new Label("My");
-        // aplikasiMy.getStyleClass().add("mylifestyle");
-        // aplikasiMy.relocate(80, 200);
-        // Label aplikasiLifeStyle = new Label("LifeStyle");
-        // aplikasiLifeStyle.getStyleClass().add("mylifestyle");
-        // aplikasiLifeStyle.relocate(95, 245);
         
         Label deskripsi1 = new Label("Routine Checking Application");
         deskripsi1.getStyleClass().add("deskripsiMylifestyle1");
@@ -94,9 +87,9 @@ public class App extends Application {
         garisPassword.setStroke(Color.WHITE);
         garisPassword.setStrokeWidth(1.5);
 
-        Hyperlink signUp = new Hyperlink("Sign Up");
+        Hyperlink signUp = new Hyperlink("Don’t have an account? Sign up");
         signUp.getStyleClass().add("judulKlik");
-        signUp.relocate(610, 330);
+        signUp.relocate(445, 450);
         signUp.setOnAction(e -> stage.setScene(registrationScene(stage)));
 
         Label error = new Label();
@@ -142,13 +135,13 @@ public class App extends Application {
 
         Button buttonHistory = new Button("History");
         buttonHistory.getStyleClass().add("buttonWelcome");
-        buttonHistory.relocate(155, 390);
-        // buttonHistory.setOnAction(e -> stage.setScene(loginScene(stage)));
+        buttonHistory.relocate(165, 390);
+        buttonHistory.setOnAction(e -> stage.setScene(historyScene(stage)));
 
         Button buttonNext = new Button("Next >>");
         buttonNext.getStyleClass().add("buttonWelcome");
         buttonNext.relocate(435, 390);
-        // buttonHistory.setOnAction(e -> stage.setScene(loginScene(stage)));
+        buttonHistory.setOnAction(e -> stage.setScene(resultScane(stage)));
 
         Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/exit.jpg"));
         ImageView imageBack = new ImageView(logoBack);
@@ -293,6 +286,56 @@ public class App extends Application {
 
         Pane root = new Pane();
         root.getChildren().addAll(rectangle, success,deskripsi1, deskripsi2, buttonContinue);
+        root.getStyleClass().add("background");
+        Scene scene = new Scene(root, 740, 580);
+        scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
+        return scene;
+    }
+
+    private Scene historyScene(Stage stage) {
+        Label judulHistory = new Label("Your LifeStyle History");
+        judulHistory.getStyleClass().add("judul1");
+        judulHistory.relocate(190, 30);
+
+        Rectangle rectangle = new Rectangle(510, 412);
+        rectangle.setFill(Color.web("#1A28A3"));
+        rectangle.setOpacity(0.50);
+        rectangle.setStrokeWidth(2);
+        rectangle.setLayoutX(95);
+        rectangle.setLayoutY(90);
+
+        Button buttonHome = new Button("Home");
+        buttonHome.getStyleClass().add("buttonLogin");
+        buttonHome.relocate(260, 450);
+        buttonHome.setOnAction(e -> stage.setScene(loginScene(stage)));
+
+        Pane root = new Pane();
+        root.getChildren().addAll(rectangle, judulHistory, buttonHome);
+        root.getStyleClass().add("background");
+        Scene scene = new Scene(root, 740, 580);
+        scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
+        return scene;
+    }
+
+    private Scene resultScane(Stage stage) {
+        Label judulHistory = new Label("Your LifeStyle History");
+        judulHistory.getStyleClass().add("judul1");
+        judulHistory.relocate(190, 30);
+
+        Rectangle rectangle = new Rectangle(740, 580);
+        rectangle.setFill(Color.web("#1A28A3"));
+        rectangle.setOpacity(0.50);
+        rectangle.setStrokeWidth(2);
+        rectangle.setLayoutX(95);
+        rectangle.setLayoutY(90);
+
+        Button buttonHome = new Button("Home");
+        buttonHome.getStyleClass().add("buttonLogin");
+        buttonHome.relocate(260, 450);
+        buttonHome.setOnAction(e -> stage.setScene(loginScene(stage)));
+
+        Pane root = new Pane();
+        root.getChildren().addAll(rectangle, judulHistory, buttonHome);
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
