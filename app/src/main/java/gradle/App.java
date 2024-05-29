@@ -130,15 +130,22 @@ public class App extends Application {
     private Scene loginScene(Stage stage) {
         Label welcome = new Label("Welcome to MyLifeStyle");
         welcome.getStyleClass().add("judul1");
-        welcome.relocate(200, 140);
+        welcome.relocate(200, 110);
+
+        Image logo = new Image(getClass().getResourceAsStream("/Style/foto/logo2.jpg"));
+        ImageView viewLogo = new ImageView(logo);
+        viewLogo.setPreserveRatio(true);
+        viewLogo.setFitWidth(170);
+        viewLogo.setFitHeight(170);
+        viewLogo.relocate(285, 130);
 
         Label deskripsiWelcome = new Label("It's time to check your lifestyle \n      to make a healthy life");
         deskripsiWelcome.getStyleClass().add("deskripsiWelcome");
-        deskripsiWelcome.relocate(225, 190);
+        deskripsiWelcome.relocate(225, 290);
 
         Button buttonHistory = new Button("History");
         buttonHistory.getStyleClass().add("buttonWelcome");
-        buttonHistory.relocate(165, 390);
+        buttonHistory.relocate(155, 390);
         buttonHistory.setOnAction(e -> stage.setScene(historyScene(stage)));
 
         Button buttonNext = new Button("Next >>");
@@ -146,26 +153,26 @@ public class App extends Application {
         buttonNext.relocate(435, 390);
         buttonNext.setOnAction(e -> stage.setScene(inputScene(stage)));
 
-        Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/exit.jpg"));
+        Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/home.jpg"));
         ImageView imageBack = new ImageView(logoBack);
         imageBack.setPreserveRatio(true);
-        imageBack.setFitWidth(60);
-        imageBack.setFitHeight(60);
+        imageBack.setFitWidth(30);
+        imageBack.setFitHeight(30);
         Button btnBack = new Button();
         btnBack.setGraphic(imageBack);
         btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
-        btnBack.relocate(75, 450);
+        btnBack.relocate(342, 440);
         btnBack.setOnAction(e -> stage.setScene(mainScene(stage)));
 
-        Rectangle rectangle = new Rectangle(500, 350);
+        Rectangle rectangle = new Rectangle(550, 400);
         rectangle.setFill(Color.web("#1A28A3"));
         rectangle.setOpacity(0.50);
         rectangle.setStrokeWidth(2);
-        rectangle.setLayoutX(120);
-        rectangle.setLayoutY(115);
+        rectangle.setLayoutX(95);
+        rectangle.setLayoutY(90);
 
         Pane root = new Pane();
-        root.getChildren().addAll(rectangle, welcome, deskripsiWelcome, btnBack, buttonHistory, buttonNext);
+        root.getChildren().addAll(rectangle, welcome, viewLogo, deskripsiWelcome, btnBack, buttonHistory, buttonNext);
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
@@ -223,11 +230,11 @@ public class App extends Application {
         error1.getStyleClass().add("warning");
         error1.relocate(190, 300);
 
-        Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/exit.jpg"));
+        Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/home2.jpg"));
         ImageView imageBack = new ImageView(logoBack);
         imageBack.setPreserveRatio(true);
-        imageBack.setFitWidth(60);
-        imageBack.setFitHeight(60);
+        imageBack.setFitWidth(40);
+        imageBack.setFitHeight(40);
         Button btnBack = new Button();
         btnBack.setGraphic(imageBack);
         btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
@@ -298,7 +305,7 @@ public class App extends Application {
     private Scene historyScene(Stage stage) {
         Label judulHistory = new Label("Your LifesTyle History");
         judulHistory.getStyleClass().add("judul1");
-        judulHistory.relocate(190, 30);
+        judulHistory.relocate(213, 30);
 
         Rectangle rectangle = new Rectangle(550, 400);
         rectangle.setFill(Color.web("#1A28A3"));
@@ -307,13 +314,24 @@ public class App extends Application {
         rectangle.setLayoutX(95);
         rectangle.setLayoutY(90);
 
-        Button buttonHome = new Button("Home");
-        buttonHome.getStyleClass().add("buttonLogin");
-        buttonHome.relocate(260, 450);
-        buttonHome.setOnAction(e -> stage.setScene(loginScene(stage)));
+        Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/home2.jpg"));
+        ImageView imageBack = new ImageView(logoBack);
+        imageBack.setPreserveRatio(true);
+        imageBack.setFitWidth(75);
+        imageBack.setFitHeight(75);
+        Button btnBack = new Button();
+        btnBack.setGraphic(imageBack);
+        btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+        btnBack.relocate(322, 445);
+        btnBack.setOnAction(e -> stage.setScene(mainScene(stage)));
+
+        // Button buttonHome = new Button("Home");
+        // buttonHome.getStyleClass().add("buttonLogin");
+        // buttonHome.relocate(260, 450);
+        // buttonHome.setOnAction(e -> stage.setScene(loginScene(stage)));
 
         Pane root = new Pane();
-        root.getChildren().addAll(rectangle, judulHistory, buttonHome);
+        root.getChildren().addAll(rectangle, judulHistory, btnBack);
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
