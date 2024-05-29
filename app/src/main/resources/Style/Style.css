@@ -98,6 +98,28 @@
     -fx-font-weight: bold;
     -fx-background-radius: 25;
 }
+
+.buttonInput {
+    -fx-font-family: "Arial";                 /* Font Family */
+    -fx-text-fill: white;                     /* Warna teks putih */
+    -fx-font-size: 15px;                      /* Ukuran teks */
+    -fx-pref-width: 200px;                    /* Lebar button, disesuaikan */
+    -fx-pref-height: 40px;                    /* Tinggi button, disesuaikan */
+    -fx-font-weight: bold;                    /* Font tebal */
+    -fx-background-color: #050083;            /* Warna biru, disesuaikan sesuai gambar */
+    -fx-background-radius: 0;                 /* Tidak ada pembulatan sudut */
+    -fx-border-color: none;                   /* Tidak ada border */
+    -fx-border-width: 0;                      /* Tidak ada border */
+    -fx-padding: 10 20;                       /* Padding internal untuk mengatur posisi teks */
+    -fx-alignment: center;                    /* Pusatkan teks */
+}
+
+.buttonInput:focused, .buttonInput:pressed {
+    -fx-border-color: rgb(227, 0, 0);  /* Warna border merah */
+    -fx-border-width: 2px;  /* Lebar border */
+    -fx-border-style: solid;  /* Gaya border */
+}
+
 /* .namaInput{
     -fx-font-family: "Calibri";
     -fx-text-fill: rgb(255, 255, 255);
@@ -123,4 +145,10 @@
     -fx-font-family: "Times New Roman";
     -fx-text-fill: rgb(204, 4, 4);
     -fx-font-size: 15px;
+}
+
+.buttonInput:pressed, .buttonInput:selected {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
 }
