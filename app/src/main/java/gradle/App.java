@@ -5,6 +5,7 @@ package gradle;
 
 // import gradle.Scenes.LoginScene;
 import gradle.config.DbConfig;
+import gradle.controllers.UserControllers;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -103,7 +104,7 @@ public class App extends Application {
             String username = usernameInput.getText();
             String password = passwordInput.getText();
 
-            if (DbConfig.validasiLogin(username, password)){
+            if (UserControllers.validasiLogin(username, password)){
                 stage.setScene(loginScene(stage));
             } else {
                 error.setText("Invalid username or password");
@@ -141,7 +142,7 @@ public class App extends Application {
         Button buttonNext = new Button("Next >>");
         buttonNext.getStyleClass().add("buttonWelcome");
         buttonNext.relocate(435, 390);
-        buttonHistory.setOnAction(e -> stage.setScene(resultScane(stage)));
+        buttonNext.setOnAction(e -> stage.setScene(resultScane(stage)));
 
         Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/exit.jpg"));
         ImageView imageBack = new ImageView(logoBack);
@@ -245,7 +246,7 @@ public class App extends Application {
                 error1.setText("Data must be required!");
                 error1.relocate(305, 450);
                 return;
-            } if (DbConfig.validasiRegister(fullname, phonenumber, username, password, repassword)) {
+            } if (UserControllers.validasiRegister(fullname, phonenumber, username, password, repassword)) {
                 stage.setScene(registerSuccess(stage));
             } else {
                 error1.setText("Registration Failed. Please check your data");}
@@ -293,11 +294,11 @@ public class App extends Application {
     }
 
     private Scene historyScene(Stage stage) {
-        Label judulHistory = new Label("Your LifeStyle History");
+        Label judulHistory = new Label("Your LifesTyle History");
         judulHistory.getStyleClass().add("judul1");
         judulHistory.relocate(190, 30);
 
-        Rectangle rectangle = new Rectangle(510, 412);
+        Rectangle rectangle = new Rectangle(550, 400);
         rectangle.setFill(Color.web("#1A28A3"));
         rectangle.setOpacity(0.50);
         rectangle.setStrokeWidth(2);
@@ -322,13 +323,13 @@ public class App extends Application {
         judulHistory.getStyleClass().add("judul1");
         judulHistory.relocate(190, 30);
 
-        Rectangle rectangle = new Rectangle(740, 580);
+        Rectangle rectangle = new Rectangle(550, 400);
         rectangle.setFill(Color.web("#1A28A3"));
         rectangle.setOpacity(0.50);
         rectangle.setStrokeWidth(2);
         rectangle.setLayoutX(95);
         rectangle.setLayoutY(90);
-
+        
         Button buttonHome = new Button("Home");
         buttonHome.getStyleClass().add("buttonLogin");
         buttonHome.relocate(260, 450);
