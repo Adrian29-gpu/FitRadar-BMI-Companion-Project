@@ -323,7 +323,7 @@ public class App extends Application {
         btnBack.setGraphic(imageBack);
         btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         btnBack.relocate(322, 445);
-        btnBack.setOnAction(e -> stage.setScene(mainScene(stage)));
+        btnBack.setOnAction(e -> stage.setScene(loginScene(stage)));
 
         // Button buttonHome = new Button("Home");
         // buttonHome.getStyleClass().add("buttonLogin");
@@ -523,9 +523,14 @@ public class App extends Application {
         buttonBox5.getChildren().addAll(option15, option16, option17);
         buttonBox6.getChildren().addAll(option18, option19, option20);
         buttonBox7.getChildren().addAll(option21, option22);
+
+        Button buttonResult = new Button("Result");
+        buttonResult.getStyleClass().add("buttonLogin");
+        buttonResult.relocate(275, 1400);
+        buttonResult.setOnAction(e -> stage.setScene(resultScane(stage)));
         
         Pane root = new Pane();
-        root.getChildren().addAll(input, input2, buttonBox, input3, input4, buttonBox2, option7, input5, input6, buttonBox3, option11, input7, input8, buttonBox4, input9, input10, buttonBox5, input11, input12, buttonBox6, input13, buttonBox7);
+        root.getChildren().addAll(input, input2, buttonBox, input3, input4, buttonBox2, option7, input5, input6, buttonBox3, option11, input7, input8, buttonBox4, input9, input10, buttonBox5, input11, input12, buttonBox6, input13, buttonBox7, buttonResult);
         root.getStyleClass().add("background");
         root.setPrefWidth(740);
         root.setPrefHeight(1500);
