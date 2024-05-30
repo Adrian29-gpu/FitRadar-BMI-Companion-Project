@@ -15,7 +15,7 @@ public class ResultScene {
         this.stage = stage;
     }
 
-    public void show() {
+    public Scene show() {
         Label judulHistory = new Label("Your LifeStyle History");
         judulHistory.getStyleClass().add("judul1");
         judulHistory.relocate(190, 30);
@@ -42,5 +42,6 @@ public class ResultScene {
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
+        return scene;
     }
 }
