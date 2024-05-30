@@ -21,7 +21,6 @@ public class SplashScreen {
     }
 
     public void show() {
-        /* ==> INSTANCE LAYOUT START <== */
         Image image = new Image(getClass().getResourceAsStream("Style/foto/logo.jpg"));
         ImageView imageView = new ImageView(image);
         imageView.setFitWidth(550);
@@ -39,11 +38,8 @@ public class SplashScreen {
 
         VBox root = new VBox(stackPane);
         Scene scene = new Scene(root, 550, 550);
-        // stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
-        // Remove stage title bar
-        /* ==> INSTANCE LAYOUT END <== */
     }
 
 }
