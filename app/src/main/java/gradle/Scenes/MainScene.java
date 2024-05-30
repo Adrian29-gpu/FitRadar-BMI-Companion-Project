@@ -23,7 +23,6 @@ public class MainScene {
     }
 
     public void show() {
-    // private Scene mainScene(Stage stage) {
         Image logo = new Image(getClass().getResourceAsStream("/Style/foto/logo2.jpg"));
         ImageView viewLogo = new ImageView(logo);
         viewLogo.setPreserveRatio(true);
@@ -83,7 +82,7 @@ public class MainScene {
 
         Hyperlink signUp = new Hyperlink("Don’t have an account? Sign up");
         signUp.getStyleClass().add("judulKlik");
-        signUp.relocate(445, 450);
+        signUp.relocate(440, 450);
         signUp.setOnAction(e -> {
             RegistrationScene registrationScene = new RegistrationScene(stage);
                 registrationScene.show();
@@ -95,19 +94,30 @@ public class MainScene {
 
         Button buttonLogin = new Button("Login");
         buttonLogin.getStyleClass().add("buttonLogin");
-        buttonLogin.relocate(440, 415);
+        buttonLogin.relocate(435, 415);
         buttonLogin.setOnAction(e -> {
             String username = usernameInput.getText();
             String password = passwordInput.getText();
 
             if (UserControllers.validasiLogin(username, password)){
-                // stage.setScene(loginScene(stage));
                 LoginScene loginScene = new LoginScene(stage);
                 loginScene.show();
+            } else if (username.isEmpty() && password.isEmpty()) {
+                error.setText("Username & password can't be empty");
+                error.getStyleClass().add("warning");
+                error.relocate(420, 475);
+            } else if (username.isEmpty()) {
+                error.setText("Username can't be empty");
+                error.getStyleClass().add("warning");
+                error.relocate(410, 235);
+            } else if (password.isEmpty()) {
+                error.setText("Password can't be empty");
+                error.getStyleClass().add("warning");
+                error.relocate(410, 333);
             } else {
                 error.setText("Invalid username or password");
                 error.getStyleClass().add("warning");
-                error.relocate(410, 333);
+                error.relocate(446, 480);
             }
         });
 

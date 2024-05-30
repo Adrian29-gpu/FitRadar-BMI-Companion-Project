@@ -25,18 +25,16 @@ public class App extends Application {
 
         new Thread(() -> {
             try {
-                Thread.sleep(3000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            // Update UI on JavaFX Application Thread
             Platform.runLater(() -> {
                 stage.close();
 
                 VBox root = new VBox();
                 Scene scene = new Scene(root, 740, 580);
-                // stage.initStyle(StageStyle.DECORATED);
                 stage.setScene(scene);
                 stage.show();
 

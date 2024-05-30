@@ -18,7 +18,6 @@ public class RegisterSuccess {
     }
 
     public void show() {
-    // private Scene registerSuccess(Stage stage) {
         Label success = new Label("Register Successful!");
         success.getStyleClass().add("judul1");
         success.relocate(225, 115);

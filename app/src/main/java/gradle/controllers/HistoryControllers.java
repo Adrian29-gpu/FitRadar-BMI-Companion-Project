@@ -29,7 +29,7 @@ public class HistoryControllers extends DbConfig {
         return false;
     }
 
-    // READ
+    //READ
     public static List<History> getAllHistory() {
         List<History> histories = new ArrayList<>();
         query = "SELECT * FROM histories";
@@ -45,8 +45,7 @@ public class HistoryControllers extends DbConfig {
                 String vegetable = resultSet.getString("vegetable");
                 String junkfood = resultSet.getString("junkfood");
                 String smooking = resultSet.getString("smooking");
-                // Fill the book
-                History history = new History(userid, userid, water, exercise, sleep, vegetable, junkfood, smooking, smooking);
+                History history = new History(userid, userid, water, exercise, sleep, vegetable, junkfood, smooking);
                 histories.add(history);
             }
         } catch (Exception e) {
@@ -55,7 +54,7 @@ public class HistoryControllers extends DbConfig {
         return histories;
     }
 
-    // READ
+    //READ
     public static History getHistoryById(int id) {
         History history = null;
         query = "SELECT * FROM history WHERE id=?";
@@ -72,8 +71,7 @@ public class HistoryControllers extends DbConfig {
                 String vegetable = resultSet.getString("vegetable");
                 String junkfood = resultSet.getString("junkfood");
                 String smooking = resultSet.getString("smooking");
-                // Fill the book
-                history = new History(userid, userid, water, exercise, sleep, vegetable, junkfood, smooking, smooking);
+                history = new History(userid, userid, water, exercise, sleep, vegetable, junkfood, smooking);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,18 +79,18 @@ public class HistoryControllers extends DbConfig {
         return history;
     }
 
-    // DELETE
-    public static boolean deleteHistory(int user_id) {
-        query = "DELETE FROM books WHERE user_id=?";
-        try {
-            getConnection();
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, user_id);
-            preparedStatement.executeUpdate();
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+    // // DELETE
+    // public static boolean deleteHistory(int user_id) {
+    //     query = "DELETE FROM books WHERE user_id=?";
+    //     try {
+    //         getConnection();
+    //         preparedStatement = connection.prepareStatement(query);
+    //         preparedStatement.setInt(1, user_id);
+    //         preparedStatement.executeUpdate();
+    //         return true;
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     }
+    //     return false;
+    // }
 }

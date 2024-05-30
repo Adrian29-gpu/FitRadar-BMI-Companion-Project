@@ -35,7 +35,6 @@ public class UserControllers extends DbConfig {
             preparedStatement.setString(5, repassword);
             int rowsInserted = preparedStatement.executeUpdate();
             return rowsInserted > 0;
-            // return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }

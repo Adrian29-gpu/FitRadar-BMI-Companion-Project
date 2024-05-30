@@ -18,7 +18,6 @@ public class LoginScene {
     }
 
     public void show() {
-    // private Scene loginScene(Stage stage) {
         Label welcome = new Label("Welcome to MyLifeStyle");
         welcome.getStyleClass().add("judul1");
         welcome.relocate(200, 110);
@@ -78,7 +77,5 @@ public class LoginScene {
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
-
-        // return scene;
     }
 }
