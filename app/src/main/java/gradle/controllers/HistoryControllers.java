@@ -9,8 +9,8 @@ import gradle.Models.History;
 public class HistoryControllers extends DbConfig {
 
     //CREATE
-    public static boolean addHistory(int user_id, String water, String exercise, String sleep, String sweet_food, String vegetable, String junkfood, String smooking){
-        query = "INSERT INTO history (user_id, water, exercise, sleep, sweet_food, vegetable, junkfood, smooking) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    public static boolean addHistory(int user_id, String water, String exercise, String sleep, String vegetable, String junkfood, String smooking){
+        query = "INSERT INTO history (user_id, water, exercise, sleep, vegetable, junkfood, smooking) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             getConnection();
             preparedStatement = connection.prepareStatement(query);
@@ -18,10 +18,9 @@ public class HistoryControllers extends DbConfig {
             preparedStatement.setString(2, water);
             preparedStatement.setString(3, exercise);
             preparedStatement.setString(4, sleep);
-            preparedStatement.setString(5, sweet_food);
-            preparedStatement.setString(6, vegetable);
+            preparedStatement.setString(5, vegetable);
             preparedStatement.setString(6, junkfood);
-            preparedStatement.setString(6, smooking);
+            preparedStatement.setString(7, smooking);
             preparedStatement.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -43,12 +42,11 @@ public class HistoryControllers extends DbConfig {
                 String water = resultSet.getString("water");
                 String exercise = resultSet.getString("exercise");
                 String sleep = resultSet.getString("sleep");
-                String sweetfood = resultSet.getString("sweet_food");
                 String vegetable = resultSet.getString("vegetable");
                 String junkfood = resultSet.getString("junkfood");
                 String smooking = resultSet.getString("smooking");
                 // Fill the book
-                History history = new History(userid, userid, water, exercise, sleep, sweetfood, vegetable, junkfood, smooking);
+                History history = new History(userid, userid, water, exercise, sleep, vegetable, junkfood, smooking, smooking);
                 histories.add(history);
             }
         } catch (Exception e) {
@@ -71,12 +69,11 @@ public class HistoryControllers extends DbConfig {
                 String water = resultSet.getString("water");
                 String exercise = resultSet.getString("exercise");
                 String sleep = resultSet.getString("sleep");
-                String sweetfood = resultSet.getString("sweet_food");
                 String vegetable = resultSet.getString("vegetable");
                 String junkfood = resultSet.getString("junkfood");
                 String smooking = resultSet.getString("smooking");
                 // Fill the book
-                history = new History(userid, userid, water, exercise, sleep, sweetfood, vegetable, junkfood, smooking);
+                history = new History(userid, userid, water, exercise, sleep, vegetable, junkfood, smooking, smooking);
             }
         } catch (Exception e) {
             e.printStackTrace();
