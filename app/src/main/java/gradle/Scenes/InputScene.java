@@ -2,6 +2,7 @@ package gradle.Scenes;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -19,6 +20,7 @@ import java.util.Set;
 
 public class InputScene {
     private Stage stage;
+    private Map<Integer, Button> lastSelectedButtons = new HashMap<>();
 
     public InputScene(Stage stage) {
         this.stage = stage;
@@ -30,15 +32,30 @@ public class InputScene {
 
         EventHandler<ActionEvent> buttonHandler = event -> {
             Button clickedButton = (Button) event.getSource();
-            int questionIndex = Integer.parseInt(clickedButton.getId().split("-")[0]); // Split ID to get question index
-            
+            int questionIndex = Integer.parseInt(clickedButton.getId().split("-")[0]);
+
             if (!confirmedResponses.contains(questionIndex)) {
                 responses.put(questionIndex, clickedButton.getText());
+                
+                // Remove style from previously selected button, if any
+                Button previousSelectedButton = lastSelectedButtons.get(questionIndex);
+                if (previousSelectedButton != null) {
+                    previousSelectedButton.getStyleClass().removeAll("buttonSelected");
+                    previousSelectedButton.setStyle(""); // Remove any custom styles like borders
+                }
+
+                // Set style for the current selected button
+                clickedButton.getStyleClass().add("buttonSelected");
+                clickedButton.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-border-style: solid;");
+                lastSelectedButtons.put(questionIndex, clickedButton); // Update the last selected button
+
                 System.out.println(questionIndex + " " + clickedButton.getText());
             } else {
                 System.out.println("Response for question " + questionIndex + " has already been confirmed and cannot be changed.");
             }
         };
+
+
 
         Label input = new Label("How much water do you\n           drink daily?");
         input.getStyleClass().add("inputan");
