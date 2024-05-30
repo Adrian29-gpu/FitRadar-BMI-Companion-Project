@@ -267,19 +267,16 @@ public class App extends Application {
     //     error1.getStyleClass().add("warning");
     //     error1.relocate(190, 300);
 
-    //     Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/exit.jpg"));
-    //     ImageView imageBack = new ImageView(logoBack);
-    //     imageBack.setPreserveRatio(true);
-    //     imageBack.setFitWidth(60);
-    //     imageBack.setFitHeight(60);
-    //     Button btnBack = new Button();
-    //     btnBack.setGraphic(imageBack);
-    //     btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
-    //     btnBack.relocate(75, 450);
-    //     btnBack.setOnAction(e -> {
-    //         MainScene mainScene = new MainScene(stage);
-    //             mainScene.show();
-    //     });
+        // Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/home2.jpg"));
+        // ImageView imageBack = new ImageView(logoBack);
+        // imageBack.setPreserveRatio(true);
+        // imageBack.setFitWidth(40);
+        // imageBack.setFitHeight(40);
+        // Button btnBack = new Button();
+        // btnBack.setGraphic(imageBack);
+        // btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+        // btnBack.relocate(75, 450);
+        // btnBack.setOnAction(e -> stage.setScene(mainScene(stage)));
 
     //     Button signUp = new Button("Sign Up");
     //     signUp.getStyleClass().add("buttonLogin");
@@ -313,7 +310,7 @@ public class App extends Application {
     // private Scene registerSuccess(Stage stage) {
     //     Label success = new Label("Register Successful!");
     //     success.getStyleClass().add("judul1");
-    //     success.relocate(225, 115);
+    //     success.relocate(230, 140);
 
     //     Rectangle rectangle = new Rectangle(550, 400);
     //     rectangle.setFill(Color.web("#1A28A3"));
@@ -322,27 +319,20 @@ public class App extends Application {
     //     rectangle.setLayoutX(95);
     //     rectangle.setLayoutY(90);
 
-    //     Image image = new Image(getClass().getResourceAsStream("/Style/foto/succes.jpg"));
-    //     ImageView viewImage = new ImageView(image);
-    //     viewImage.setPreserveRatio(true);
-    //     viewImage.setFitWidth(100);
-    //     viewImage.setFitHeight(100);
-    //     viewImage.relocate(325, 178);
-
-    //     Label deskripsi1 = new Label("Congratulation, your account has been \n              successfully created");
+    //     Label deskripsi1 = new Label("Congratulation, your account has been");
     //     deskripsi1.getStyleClass().add("deskripsiRegister");
-    //     deskripsi1.relocate(225, 310);
+    //     deskripsi1.relocate(230, 250);
+    //     Label deskripsi2 = new Label("successfully created");
+    //     deskripsi2.getStyleClass().add("deskripsiRegister");
+    //     deskripsi2.relocate(300, 273);
 
     //     Button buttonContinue = new Button("Continue");
     //     buttonContinue.getStyleClass().add("buttonLogin");
-    //     buttonContinue.relocate(270, 400);
-    //     buttonContinue.setOnAction(e -> {
-    //         MainScene mainScene = new MainScene(stage);
-    //             mainScene.show();
-    //     });
+    //     buttonContinue.relocate(275, 400);
+    //     buttonContinue.setOnAction(e -> stage.setScene(mainScene(stage)));
 
     //     Pane root = new Pane();
-    //     root.getChildren().addAll(rectangle, success, viewImage, deskripsi1, buttonContinue);
+    //     root.getChildren().addAll(rectangle, success,deskripsi1, deskripsi2, buttonContinue);
     //     root.getStyleClass().add("background");
     //     Scene scene = new Scene(root, 740, 580);
     //     scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
@@ -406,29 +396,57 @@ public class App extends Application {
     // }
 
     // private Scene inputScene(Stage stage) {
-    //     Label input = new Label("How much water do you\n           drink daily?");
-    //     input.getStyleClass().add("inputan");
-    //     input.relocate(220, 40); 
+    //     Label input = new Label("How much water do you");
+    //     input.getStyleClass().add("judul1");
+    //     input.relocate(210, 40); 
         
-    //     Label input2 = new Label("How long do you exercise\n             per week?");
-    //     input2.getStyleClass().add("inputan");
-    //     input2.relocate(205, 220); 
+    //     Label input2 = new Label("drink daily?");
+    //     input2.getStyleClass().add("judul1");
+    //     input2.relocate(309, 75); 
         
-    //     Label input3 = new Label("How many hours do you sleep on\n           average each night?");
-    //     input3.getStyleClass().add("inputan");
-    //     input3.relocate(165, 465);
+    //     Label input3 = new Label("How long do you exercise");
+    //     input3.getStyleClass().add("judul1");
+    //     input3.relocate(200, 220); 
         
-    //     Label input4 = new Label("How often do you eat\n         junk food?");
-    //     input4.getStyleClass().add("inputan");
-    //     input4.relocate(232, 700); 
+    //     Label input4 = new Label("per week?");
+    //     input4.getStyleClass().add("judul1");
+    //     input4.relocate(300, 255); 
         
-    //     Label input6 = new Label("How often do you eat fruits\n         and vegetables?");
-    //     input6.getStyleClass().add("inputan");
-    //     input6.relocate(200, 870); 
-
-    //     Label input7 = new Label("Do you smoke?");
-    //     input7.getStyleClass().add("inputan");
-    //     input7.relocate(273, 1045); 
+    //     Label input5 = new Label("How many hours do you sleep on");
+    //     input5.getStyleClass().add("judul1");
+    //     input5.relocate(130, 465); 
+        
+    //     Label input6 = new Label("average each night?");
+    //     input6.getStyleClass().add("judul1");
+    //     input6.relocate(220, 500); 
+        
+    //     Label input7 = new Label("How often do you eat");
+    //     input7.getStyleClass().add("judul1");
+    //     input7.relocate(220, 700); 
+        
+    //     Label input8 = new Label("junk food?");
+    //     input8.getStyleClass().add("judul1");
+    //     input8.relocate(295, 735); 
+        
+    //     Label input9 = new Label("How often do you eat or");
+    //     input9.getStyleClass().add("judul1");
+    //     input9.relocate(210, 870); 
+        
+    //     Label input10 = new Label("drink sugary foods?");
+    //     input10.getStyleClass().add("judul1");
+    //     input10.relocate(245, 905); 
+        
+    //     Label input11 = new Label("How often do you eat fruits");
+    //     input11.getStyleClass().add("judul1");
+    //     input11.relocate(185, 1045); 
+        
+    //     Label input12 = new Label("and vegetables?");
+    //     input12.getStyleClass().add("judul1");
+    //     input12.relocate(245, 1080); 
+        
+    //     Label input13 = new Label("Do you smoke?");
+    //     input13.getStyleClass().add("judul1");
+    //     input13.relocate(255, 1230); 
 
     //     // Membuat HBox untuk tombol
     //     HBox buttonBox = new HBox(35); 
@@ -542,11 +560,11 @@ public class App extends Application {
     //     buttonResult.relocate(275, 1400);
     //     buttonResult.setOnAction(e -> stage.setScene(resultScane(stage)));
         
-    //     Pane root = new Pane();
-    //     root.getChildren().addAll(input, buttonBox, input2, buttonBox2, option7, input3, buttonBox3, option11, input4, buttonBox4, input6, buttonBox6, input7, buttonBox7, buttonResult);
-    //     root.getStyleClass().add("background");
-    //     root.setPrefWidth(740);
-    //     root.setPrefHeight(1500);
+        // Pane root = new Pane();
+        // root.getChildren().addAll(input, input2, buttonBox, input3, input4, buttonBox2, option7, input5, input6, buttonBox3, option11, input7, input8, buttonBox4, input9, input10, buttonBox5, input11, input12, buttonBox6, input13, buttonBox7, buttonResult);
+        // root.getStyleClass().add("background");
+        // root.setPrefWidth(740);
+        // root.setPrefHeight(1500);
     
     //     ScrollPane scrollPane = new ScrollPane(root);
     //     // scrollPane.setFitToWidth(true);
