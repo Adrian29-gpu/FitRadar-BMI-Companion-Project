@@ -113,6 +113,7 @@ public class RegistrationScene {
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
-        // return scene;
+        stage.setScene(scene);
+        stage.show();
     }
 }

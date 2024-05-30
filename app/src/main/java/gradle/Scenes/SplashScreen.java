@@ -21,10 +21,10 @@ public class SplashScreen {
     }
 
     public void show() {
-        Image image = new Image(getClass().getResourceAsStream("Style/foto/logo.jpg"));
+        Image image = new Image(getClass().getResourceAsStream("/Style/foto/logo.jpg"));
         ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(550);
-        imageView.setFitHeight(550);
+        imageView.setFitWidth(580);
+        imageView.setFitHeight(580);
         imageView.setPreserveRatio(true);
 
         Label labelLoading = new Label("Loading...");
@@ -37,7 +37,7 @@ public class SplashScreen {
         StackPane stackPane = new StackPane(imageView, vBoxLoading);
 
         VBox root = new VBox(stackPane);
-        Scene scene = new Scene(root, 550, 550);
+        Scene scene = new Scene(root, 580, 580);
         stage.setScene(scene);
         stage.show();
     }

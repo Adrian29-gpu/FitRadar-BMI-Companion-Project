@@ -117,5 +117,7 @@ public class MainScene {
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
         stage.setTitle("MyLifeStyle");
+        stage.setScene(scene);
+        stage.show();
     }
 }

@@ -171,6 +171,7 @@ public class InputScene {
     
         Scene scene = new Scene(scrollPane, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
-        // return scene;
+        stage.setScene(scene);
+        stage.show();
     }
 }

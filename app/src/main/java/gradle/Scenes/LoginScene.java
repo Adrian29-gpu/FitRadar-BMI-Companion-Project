@@ -76,6 +76,9 @@ public class LoginScene {
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+
         // return scene;
     }
 }
