@@ -47,4 +47,9 @@ public class UserControllers extends DbConfig {
         }
         return false;
     }
+
+    public static boolean isUsernameTaken(String username) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isUsernameTaken'");
+    }
 }

@@ -102,10 +102,7 @@ public class MainScene extends AbstractScene {
 
             User user = UserControllers.validasiLogin(username, password);
 
-            if (user != null) {
-                LoginScene loginScene = new LoginScene(stage);
-                loginScene.show(user.getId());
-            } else if (username.isEmpty() && password.isEmpty()) {
+            if (username.isEmpty() && password.isEmpty()) {
                 error.setText("Username & password can't be empty");
                 error.getStyleClass().add("warning");
                 error.relocate(420, 475);
@@ -117,6 +114,9 @@ public class MainScene extends AbstractScene {
                 error.setText("Password can't be empty");
                 error.getStyleClass().add("warning");
                 error.relocate(410, 333);
+            } else if (user != null) {
+                LoginScene loginScene = new LoginScene(stage);
+                loginScene.show(user.getId());
             } else {
                 error.setText("Invalid username or password");
                 error.getStyleClass().add("warning");

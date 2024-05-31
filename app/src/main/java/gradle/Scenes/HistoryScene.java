@@ -48,8 +48,8 @@ public class HistoryScene {
         HBox history1 = new HBox(10); // Mengubah spacing sesuai kebutuhan
         history1.getStyleClass().add("hboxHistory");
         history1.getChildren().addAll(labelH1, btnH1);
-        history1.setLayoutX(120);
-        history1.setLayoutY(100);
+        history1.setLayoutX(112);
+        history1.setLayoutY(110);
         history1.setAlignment(Pos.CENTER_LEFT);
 
         
