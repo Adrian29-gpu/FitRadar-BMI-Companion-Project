@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -106,7 +108,7 @@ public class InputScene {
 
         HBox buttonBox7 = new HBox(30);
         buttonBox7.setLayoutX(145);
-        buttonBox7.setLayoutY(1140);
+        buttonBox7.setLayoutY(1105);
 
         // Membuat tombol
         Button option1 = new Button("Less than 1.5 L/day");
@@ -222,8 +224,8 @@ public class InputScene {
 
         Button buttonResult = new Button("Result");
         buttonResult.getStyleClass().add("buttonLogin");
-        buttonResult.setLayoutX(275);
-        buttonResult.setLayoutY(1400);
+        buttonResult.setLayoutX(260);
+        buttonResult.setLayoutY(1225);
         buttonResult.setOnAction(e -> {
             if (responses.size() < 6) { // Assuming there are 6 questions to answer
                 errorLabel.setText("All data must be filled!");
@@ -236,18 +238,32 @@ public class InputScene {
                         responses.get(2), responses.get(3), responses.get(5), responses.get(6));
                 if (isSuccess) {
                     ResultScene resultScene = new ResultScene(stage, responses);
-                    resultScene.show(id);
+                        resultScene.show(id);
                 }
 
             }
         });
 
+        Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/exit.jpg"));
+        ImageView imageBack = new ImageView(logoBack);
+        imageBack.setPreserveRatio(true);
+        imageBack.setFitWidth(65);
+        imageBack.setFitHeight(65);
+        Button btnBack = new Button();
+        btnBack.setGraphic(imageBack);
+        btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+        btnBack.relocate(15, 1300);
+        btnBack.setOnAction(e -> {
+            LoginScene loginScene = new LoginScene(stage);
+                loginScene.show(id);
+        });
+
         Pane root = new Pane();
         root.getChildren().addAll(input, buttonBox, input2, buttonBox2, option7, input3, buttonBox3, option11, input4,
-                buttonBox4, input6, buttonBox6, input7, buttonBox7, buttonResult);
+                buttonBox4, input6, buttonBox6, input7, buttonBox7, buttonResult, btnBack);
         root.getStyleClass().add("background");
         root.setPrefWidth(740);
-        root.setPrefHeight(1500);
+        root.setPrefHeight(1370);
 
         ScrollPane scrollPane = new ScrollPane(root);
         // scrollPane.setFitToWidth(true);
