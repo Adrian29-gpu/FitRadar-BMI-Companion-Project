@@ -32,7 +32,7 @@ public class ResultScene {
         hydration.getStyleClass().add("judul1");
         hydration.relocate(15, 140);
         
-        Label option1 = new Label(responses.getOrDefault(0, "No response")); // Default message if no response
+        Label option1 = new Label(responses.getOrDefault(0, "No response")); 
         option1.getStyleClass().add("judul3");
         option1.relocate(20, 180);
         
@@ -40,7 +40,7 @@ public class ResultScene {
         exercise.getStyleClass().add("judul1");
         exercise.relocate(15, 400);
         
-        Label option2 = new Label(responses.getOrDefault(1, "No response")); // Default message if no response
+        Label option2 = new Label(responses.getOrDefault(1, "No response")); 
         option2.getStyleClass().add("judul3");
         option2.relocate(15, 440);
         
@@ -48,7 +48,7 @@ public class ResultScene {
         sleep.getStyleClass().add("judul1");
         sleep.relocate(15, 660);
         
-        Label option3 = new Label(responses.getOrDefault(2, "No response")); // Default message if no response
+        Label option3 = new Label(responses.getOrDefault(2, "No response")); 
         option3.getStyleClass().add("judul3");
         option3.relocate(15, 700);
         
@@ -56,7 +56,7 @@ public class ResultScene {
         junkFood.getStyleClass().add("judul1");
         junkFood.relocate(15, 900);
         
-        Label option4 = new Label(responses.getOrDefault(3, "No response")); // Default message if no response
+        Label option4 = new Label(responses.getOrDefault(3, "No response")); 
         option4.getStyleClass().add("judul3");
         option4.relocate(15, 940);
         
@@ -64,7 +64,7 @@ public class ResultScene {
         fruits.getStyleClass().add("judul1");
         fruits.relocate(15, 1140);
         
-        Label option5 = new Label(responses.getOrDefault(5, "No response")); // Default message if no response
+        Label option5 = new Label(responses.getOrDefault(5, "No response")); 
         option5.getStyleClass().add("judul3");
         option5.relocate(15, 1180);
         
@@ -72,7 +72,7 @@ public class ResultScene {
         smoke.getStyleClass().add("judul1");
         smoke.relocate(15, 1380);
         
-        Label option6 = new Label(responses.getOrDefault(6, "No response")); // Default message if no response
+        Label option6 = new Label(responses.getOrDefault(6, "No response")); 
         option6.getStyleClass().add("judul3");
         option6.relocate(15, 1420);
 
