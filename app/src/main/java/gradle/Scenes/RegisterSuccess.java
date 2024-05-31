@@ -10,13 +10,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class RegisterSuccess {
-    private Stage stage;
+public class RegisterSuccess extends AbstractScene{
 
     public RegisterSuccess(Stage stage) {
-        this.stage = stage;
+        super(stage);
     }
 
+    @Override
     public void show() {
         Label success = new Label("Register Successful!");
         success.getStyleClass().add("judul1");

@@ -13,13 +13,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-public class SplashScreen {
-    private Stage stage;
+public class SplashScreen extends AbstractScene{
 
     public SplashScreen(Stage stage) {
-        this.stage = stage;
+        super(stage);
     }
 
+    @Override
     public void show() {
         Image image = new Image(getClass().getResourceAsStream("/Style/foto/logo.jpg"));
         ImageView imageView = new ImageView(image);

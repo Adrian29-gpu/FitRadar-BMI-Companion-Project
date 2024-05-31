@@ -13,13 +13,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class RegistrationScene {
-    private Stage stage;
+public class RegistrationScene extends AbstractScene {
 
     public RegistrationScene(Stage stage) {
-        this.stage = stage;
+        super(stage);
     }
 
+    @Override
     public void show() {
         Label registerLabel = new Label("Registration");
         registerLabel.getStyleClass().add("judul1");

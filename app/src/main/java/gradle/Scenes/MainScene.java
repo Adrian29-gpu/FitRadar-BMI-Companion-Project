@@ -16,13 +16,13 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class MainScene {
-    private Stage stage;
+public class MainScene extends AbstractScene {
 
     public MainScene(Stage stage) {
-        this.stage = stage;
+        super(stage);
     }
 
+    @Override
     public void show() {
         Image logo = new Image(getClass().getResourceAsStream("/Style/foto/logo2.jpg"));
         ImageView viewLogo = new ImageView(logo);
