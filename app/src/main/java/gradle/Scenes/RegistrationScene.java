@@ -78,7 +78,7 @@ public class RegistrationScene {
         imageBack.setFitHeight(60);
         Button btnBack = new Button();
         btnBack.setGraphic(imageBack);
-        btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+        btnBack.getStyleClass().add("buttonBack");
         btnBack.relocate(75, 450);
         btnBack.setOnAction(e -> {
             MainScene mainScene = new MainScene(stage);

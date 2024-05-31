@@ -1,5 +1,6 @@
 package gradle.Scenes;
 
+import gradle.Models.User;
 import gradle.controllers.UserControllers;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -99,9 +100,11 @@ public class MainScene {
             String username = usernameInput.getText();
             String password = passwordInput.getText();
 
-            if (UserControllers.validasiLogin(username, password)){
+            User user = UserControllers.validasiLogin(username, password);
+
+            if (user != null){
                 LoginScene loginScene = new LoginScene(stage);
-                loginScene.show();
+                loginScene.show(user.getId());
             } else if (username.isEmpty() && password.isEmpty()) {
                 error.setText("Username & password can't be empty");
                 error.getStyleClass().add("warning");

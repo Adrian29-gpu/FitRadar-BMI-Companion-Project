@@ -17,7 +17,7 @@ public class HistoryScene {
         this.stage = stage;
     }
 
-    public void show() {
+    public void show(int id) {
         Label judulHistory = new Label("Your LifesTyle History");
         judulHistory.getStyleClass().add("judul1");
         judulHistory.relocate(213, 30);
@@ -36,11 +36,11 @@ public class HistoryScene {
         imageBack.setFitHeight(75);
         Button btnBack = new Button();
         btnBack.setGraphic(imageBack);
-        btnBack.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+        btnBack.getStyleClass().add("buttonBack");
         btnBack.relocate(322, 445);
         btnBack.setOnAction(e -> {
             LoginScene loginScene = new LoginScene(stage);
-                loginScene.show();
+                loginScene.show(id);
         });
 
         Pane root = new Pane();

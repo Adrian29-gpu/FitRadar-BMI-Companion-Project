@@ -19,7 +19,7 @@ public class ResultScene {
         this.responses = responses;
     }
 
-    public Scene show() {
+    public Scene show(int id) {
         Label judulHistory = new Label("MyLifeStyle");
         judulHistory.getStyleClass().add("judul2");
         judulHistory.relocate(260, 15);
@@ -88,7 +88,7 @@ public class ResultScene {
         buttonHome.relocate(260, 1650);
         buttonHome.setOnAction(e -> {
             LoginScene loginScene = new LoginScene(stage);
-                loginScene.show();
+                loginScene.show(id);
         });
 
         Pane root = new Pane();

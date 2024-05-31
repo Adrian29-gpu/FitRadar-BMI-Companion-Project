@@ -3,10 +3,11 @@ package gradle.controllers;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import gradle.Models.User;
 import gradle.config.DbConfig;
 
 public class UserControllers extends DbConfig {
-    public static boolean validasiLogin(String username, String password){
+    public static User validasiLogin(String username, String password){
         getConnection();
         query = "SELECT * FROM users WHERE username=? AND password=?";
         try {
@@ -15,12 +16,17 @@ public class UserControllers extends DbConfig {
             preparedStatement.setString(2, password);
 
             try (ResultSet login = preparedStatement.executeQuery()){
-                return login.next();
+                int id = login.getInt("id");
+                String dataUsername = login.getString("username");
+                String fullnumber = login.getString("fullname");
+                String phonenumber = login.getString("phonenumber");
+                User user = new User(id, dataUsername, fullnumber, phonenumber);
+                return user;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return null;
     }
 
     public static boolean validasiRegister(String fullname, String phonenumber, String username, String password, String repassword) {
