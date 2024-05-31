@@ -8,8 +8,9 @@ import gradle.Models.History;
 
 public class HistoryControllers extends DbConfig {
 
-    //CREATE
-    public static boolean addHistory(int user_id, String water, String exercise, String sleep, String vegetable, String junkfood, String smooking){
+    // CREATE
+    public static boolean addHistory(int user_id, String water, String exercise, String sleep, String vegetable,
+            String junkfood, String smooking) {
         query = "INSERT INTO history (user_id, water, exercise, sleep, vegetable, junkfood, smooking) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             getConnection();
@@ -29,7 +30,7 @@ public class HistoryControllers extends DbConfig {
         return false;
     }
 
-    //READ
+    // READ
     public static List<History> getAllHistory() {
         List<History> histories = new ArrayList<>();
         query = "SELECT * FROM histories";
@@ -54,7 +55,7 @@ public class HistoryControllers extends DbConfig {
         return histories;
     }
 
-    //READ
+    // READ
     public static History getHistoryById(int id) {
         History history = null;
         query = "SELECT * FROM history WHERE id=?";
@@ -81,16 +82,16 @@ public class HistoryControllers extends DbConfig {
 
     // // DELETE
     // public static boolean deleteHistory(int user_id) {
-    //     query = "DELETE FROM books WHERE user_id=?";
-    //     try {
-    //         getConnection();
-    //         preparedStatement = connection.prepareStatement(query);
-    //         preparedStatement.setInt(1, user_id);
-    //         preparedStatement.executeUpdate();
-    //         return true;
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //     }
-    //     return false;
+    // query = "DELETE FROM books WHERE user_id=?";
+    // try {
+    // getConnection();
+    // preparedStatement = connection.prepareStatement(query);
+    // preparedStatement.setInt(1, user_id);
+    // preparedStatement.executeUpdate();
+    // return true;
+    // } catch (Exception e) {
+    // e.printStackTrace();
+    // }
+    // return false;
     // }
 }

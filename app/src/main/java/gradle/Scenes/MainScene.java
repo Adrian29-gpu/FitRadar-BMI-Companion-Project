@@ -30,7 +30,7 @@ public class MainScene {
         viewLogo.setFitWidth(270);
         viewLogo.setFitHeight(270);
         viewLogo.relocate(55, 120);
-        
+
         Label deskripsi1 = new Label("Routine Checking Application");
         deskripsi1.getStyleClass().add("deskripsiMylifestyle1");
         deskripsi1.relocate(75, 350);
@@ -86,7 +86,7 @@ public class MainScene {
         signUp.relocate(440, 450);
         signUp.setOnAction(e -> {
             RegistrationScene registrationScene = new RegistrationScene(stage);
-                registrationScene.show();
+            registrationScene.show();
         });
 
         Label error = new Label();
@@ -102,7 +102,7 @@ public class MainScene {
 
             User user = UserControllers.validasiLogin(username, password);
 
-            if (user != null){
+            if (user != null) {
                 LoginScene loginScene = new LoginScene(stage);
                 loginScene.show(user.getId());
             } else if (username.isEmpty() && password.isEmpty()) {
@@ -125,7 +125,8 @@ public class MainScene {
         });
 
         Pane root = new Pane();
-        root.getChildren().addAll(rectangle, viewLogo,  deskripsi1, deskripsi2, signIn, usernameJudul, garisUsername, passwordJudul, garisPassword, buttonLogin, signUp, usernameInput, passwordInput, error);
+        root.getChildren().addAll(rectangle, viewLogo, deskripsi1, deskripsi2, signIn, usernameJudul, garisUsername,
+                passwordJudul, garisPassword, buttonLogin, signUp, usernameInput, passwordInput, error);
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());

@@ -15,7 +15,7 @@ public class History extends Model {
         this.junkfood = junkfood;
         this.smooking = smooking;
     }
-    
+
     public int getuserId() {
         return userId;
     }

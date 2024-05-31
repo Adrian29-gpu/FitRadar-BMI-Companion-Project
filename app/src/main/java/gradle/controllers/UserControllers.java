@@ -7,7 +7,7 @@ import gradle.Models.User;
 import gradle.config.DbConfig;
 
 public class UserControllers extends DbConfig {
-    public static User validasiLogin(String username, String password){
+    public static User validasiLogin(String username, String password) {
         getConnection();
         query = "SELECT * FROM users WHERE username=? AND password=?";
         try {
@@ -15,7 +15,7 @@ public class UserControllers extends DbConfig {
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
 
-            try (ResultSet login = preparedStatement.executeQuery()){
+            try (ResultSet login = preparedStatement.executeQuery()) {
                 int id = login.getInt("id");
                 String dataUsername = login.getString("username");
                 String fullnumber = login.getString("fullname");
@@ -29,7 +29,8 @@ public class UserControllers extends DbConfig {
         return null;
     }
 
-    public static boolean validasiRegister(String fullname, String phonenumber, String username, String password, String repassword) {
+    public static boolean validasiRegister(String fullname, String phonenumber, String username, String password,
+            String repassword) {
         query = "INSERT INTO users (fullname, phonenumber, username, password, repassword) VALUES (?, ?, ?, ?, ?)";
         try {
             getConnection();

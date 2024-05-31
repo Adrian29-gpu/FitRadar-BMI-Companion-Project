@@ -15,10 +15,10 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) throws Exception {
         stage.setResizable(false);
         Image imageIcon = new Image(getClass().getClassLoader().getResourceAsStream("Style/foto/logo.jpg"));
-            stage.getIcons().add(imageIcon);
+        stage.getIcons().add(imageIcon);
 
         SplashScreen splashScreen = new SplashScreen(stage);
         splashScreen.show();

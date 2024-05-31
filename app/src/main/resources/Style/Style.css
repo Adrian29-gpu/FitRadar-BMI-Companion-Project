@@ -1,18 +1,18 @@
-.mylifestyle{
+.mylifestyle {
     -fx-font-family: "Comic Sans MS";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 35px;
     -fx-font-weight: bold;
 }
 
-.deskripsiMylifestyle1{
+.deskripsiMylifestyle1 {
     -fx-font-family: "Baskerville Old Face";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 19px;
     -fx-font-weight: bold;
 }
 
-.deskripsiMylifestyle2{
+.deskripsiMylifestyle2 {
     -fx-font-family: "Baskerville Old Face";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 16px;
@@ -25,55 +25,55 @@
     -fx-background-repeat: no-repeat;
 }
 
-.judul{
+.judul {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 25px;
     -fx-font-weight: bold;
 }
 
-.judul1{
+.judul1 {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 30px;
     -fx-font-weight: bold;
 }
 
-.judul2{
+.judul2 {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 45px;
     -fx-font-weight: bold;
 }
 
-.judul3{
+.judul3 {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 15px;
     -fx-font-weight: bold;
 }
 
-.inputan{
+.inputan {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 25px;
     -fx-font-weight: bold;
 }
 
-.judulInput{
+.judulInput {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 14px;
     -fx-font-weight: bold;
 }
 
-.judulKlik{
+.judulKlik {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 13px;
 }
 
-.buttonLogin{
+.buttonLogin {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(0, 21, 112);
     -fx-font-size: 18px;
@@ -83,34 +83,34 @@
     -fx-background-radius: 25;
 }
 
-.deskripsiRegister{
+.deskripsiRegister {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 17px;
 }
 
-.tabelInput{
+.tabelInput {
     -fx-pref-width: 240px;
     -fx-pref-height: 30px;
 }
 
-.transparanInput{
+.transparanInput {
     -fx-font-family: "Arial";
-    -fx-background-color: transparent; 
-    -fx-border-color: transparent; 
-    -fx-text-fill: rgb(255, 255, 255);       
-    -fx-font-size: 14px;     
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-font-size: 14px;
     -fx-padding: 5;
 }
 
-.deskripsiWelcome{
+.deskripsiWelcome {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);
     -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
 
-.buttonWelcome{
+.buttonWelcome {
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(0, 21, 112);
     -fx-font-size: 18px;
@@ -121,38 +121,40 @@
 }
 
 .buttonInput {
-    -fx-font-family: "Arial";                 /* Font Family */
-    -fx-text-fill: white;                     /* Warna teks putih */
-    -fx-font-size: 15px;                      /* Ukuran teks */
-    -fx-pref-width: 200px;                    /* Lebar button, disesuaikan */
-    -fx-pref-height: 40px;                    /* Tinggi button, disesuaikan */
-    -fx-font-weight: bold;                    /* Font tebal */
-    -fx-background-color: #050083;            /* Warna biru, disesuaikan sesuai gambar */
-    -fx-background-radius: 0;                 /* Tidak ada pembulatan sudut */
-    -fx-border-color: none;                   /* Tidak ada border */
-    -fx-border-width: 0;                      /* Tidak ada border */
-    -fx-padding: 10 20;                       /* Padding internal untuk mengatur posisi teks */
-    -fx-alignment: center;                    /* Pusatkan teks */
+    -fx-font-family: "Arial";
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 40px;
+    -fx-font-weight: bold;
+    -fx-background-color: #050083;
+    -fx-background-radius: 0;
+    -fx-border-color: none;
+    -fx-border-width: 0;
+    -fx-padding: 10 20;
+    -fx-alignment: center;
 }
 
-.buttonBack{
+.buttonBack {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
 }
 
-.buttonInput:focused, .buttonInput:pressed {
-    -fx-border-color: rgb(227, 0, 0);  /* Warna border merah */
-    -fx-border-width: 2px;  /* Lebar border */
-    -fx-border-style: solid;  /* Gaya border */
+.buttonInput:focused,
+.buttonInput:pressed {
+    -fx-border-color: rgb(227, 0, 0);
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
 }
 
-.warning{
+.warning {
     -fx-font-family: "Times New Roman";
     -fx-text-fill: rgb(204, 4, 4);
     -fx-font-size: 15px;
 }
 
-.buttonInput:pressed, .buttonInput:selected {
+.buttonInput:pressed,
+.buttonInput:selected {
     -fx-border-color: red;
     -fx-border-width: 2px;
     -fx-border-style: solid;

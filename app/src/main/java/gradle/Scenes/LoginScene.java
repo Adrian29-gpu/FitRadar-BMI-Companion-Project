@@ -38,7 +38,7 @@ public class LoginScene {
         buttonHistory.relocate(155, 390);
         buttonHistory.setOnAction(e -> {
             HistoryScene historyScene = new HistoryScene(stage);
-                historyScene.show(id);
+            historyScene.show(id);
         });
 
         Button buttonNext = new Button("Next >>");
@@ -46,7 +46,7 @@ public class LoginScene {
         buttonNext.relocate(435, 390);
         buttonNext.setOnAction(e -> {
             InputScene inputScene = new InputScene(stage);
-                inputScene.show(id);
+            inputScene.show(id);
         });
 
         Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/home.jpg"));
@@ -60,7 +60,7 @@ public class LoginScene {
         btnBack.relocate(342, 440);
         btnBack.setOnAction(e -> {
             MainScene mainScene = new MainScene(stage);
-                mainScene.show();
+            mainScene.show();
         });
 
         Rectangle rectangle = new Rectangle(550, 400);

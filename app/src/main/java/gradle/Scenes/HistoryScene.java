@@ -40,7 +40,7 @@ public class HistoryScene {
         btnBack.relocate(322, 445);
         btnBack.setOnAction(e -> {
             LoginScene loginScene = new LoginScene(stage);
-                loginScene.show(id);
+            loginScene.show(id);
         });
 
         Pane root = new Pane();

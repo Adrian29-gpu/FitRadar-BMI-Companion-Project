@@ -45,7 +45,7 @@ public class RegisterSuccess {
         buttonContinue.relocate(270, 400);
         buttonContinue.setOnAction(e -> {
             MainScene mainScene = new MainScene(stage);
-                mainScene.show();
+            mainScene.show();
         });
 
         Pane root = new Pane();
