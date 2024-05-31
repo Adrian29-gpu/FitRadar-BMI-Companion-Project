@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import java.util.Map;
@@ -43,13 +44,21 @@ public class ResultScene {
 
         Label option1 = new Label(responses.getOrDefault(0, "No response")); 
         option1.getStyleClass().add("judul3");
-        option1.relocate(20, 180);
+        option1.relocate(15, 310);
 
         hydrationResult = new Label(getHydrationResult());
         hydrationResult.getStyleClass().add("judul3");
-        hydrationResult.relocate(100, 220);
+        hydrationResult.relocate(160, 185);
         hydrationResult.setWrapText(true);
         hydrationResult.getStyleClass().add("impact");
+
+        Line garis1 = new Line();
+        garis1.setStartX(0);
+        garis1.setStartY(366);
+        garis1.setEndX(740);
+        garis1.setEndY(366);
+        garis1.setStroke(Color.WHITE);
+        garis1.setStrokeWidth(1.5);
 
         Image air = new Image(getClass().getResourceAsStream("/Style/foto/Water.PNG"));
         ImageView viewImage = new ImageView(air);
@@ -64,11 +73,11 @@ public class ResultScene {
         
         Label option2 = new Label(responses.getOrDefault(1, "No response")); 
         option2.getStyleClass().add("judul3");
-        option2.relocate(15, 440);
+        option2.relocate(15, 570);
         
         exerciseResult = new Label(getExerciseResult());
         exerciseResult.getStyleClass().add("judul3");
-        exerciseResult.relocate(100, 460);
+        exerciseResult.relocate(150, 445);
         exerciseResult.setWrapText(true);
         exerciseResult.getStyleClass().add("impact");
 
@@ -78,6 +87,14 @@ public class ResultScene {
         viewImage1.setFitWidth(130);
         viewImage1.setFitHeight(130);
         viewImage1.relocate(15, 440);
+
+        Line garis2 = new Line();
+        garis2.setStartX(0);
+        garis2.setStartY(626);
+        garis2.setEndX(740);
+        garis2.setEndY(626);
+        garis2.setStroke(Color.WHITE);
+        garis2.setStrokeWidth(1.5);
         
         Label sleep = new Label("Sleep");
         sleep.getStyleClass().add("judul1");
@@ -85,11 +102,11 @@ public class ResultScene {
         
         Label option3 = new Label(responses.getOrDefault(2, "No response")); 
         option3.getStyleClass().add("judul3");
-        option3.relocate(15, 700);
+        option3.relocate(15, 830);
         
         sleepResult = new Label(getSleepResult());
         sleepResult.getStyleClass().add("judul3");
-        sleepResult.relocate(100, 720);
+        sleepResult.relocate(150, 705);
         sleepResult.setWrapText(true);
         sleepResult.getStyleClass().add("impact");
 
@@ -99,6 +116,14 @@ public class ResultScene {
         viewImage2.setFitWidth(130);
         viewImage2.setFitHeight(130);
         viewImage2.relocate(15, 700);
+
+        Line garis3 = new Line();
+        garis3.setStartX(0);
+        garis3.setStartY(886);
+        garis3.setEndX(740);
+        garis3.setEndY(886);
+        garis3.setStroke(Color.WHITE);
+        garis3.setStrokeWidth(1.5);
         
         Label junkFood = new Label("Junk Food");
         junkFood.getStyleClass().add("judul1");
@@ -106,11 +131,11 @@ public class ResultScene {
         
         Label option4 = new Label(responses.getOrDefault(3, "No response")); 
         option4.getStyleClass().add("judul3");
-        option4.relocate(15, 940);
+        option4.relocate(15, 1070);
         
         junkFoodResult = new Label(getJunkfoodResult());
         junkFoodResult.getStyleClass().add("judul3");
-        junkFoodResult.relocate(100, 960);
+        junkFoodResult.relocate(150, 945);
         junkFoodResult.setWrapText(true);
         junkFoodResult.getStyleClass().add("impact");
 
@@ -120,6 +145,14 @@ public class ResultScene {
         viewImage3.setFitWidth(130);
         viewImage3.setFitHeight(130);
         viewImage3.relocate(15, 940);
+
+        Line garis4 = new Line();
+        garis4.setStartX(0);
+        garis4.setStartY(1126);
+        garis4.setEndX(740);
+        garis4.setEndY(1126);
+        garis4.setStroke(Color.WHITE);
+        garis4.setStrokeWidth(1.5);
         
         Label fruits = new Label("Fruits and Vegetables");
         fruits.getStyleClass().add("judul1");
@@ -127,11 +160,11 @@ public class ResultScene {
         
         Label option5 = new Label(responses.getOrDefault(5, "No response")); 
         option5.getStyleClass().add("judul3");
-        option5.relocate(15, 1180);
+        option5.relocate(15, 1310);
         
         vegetableResult = new Label(getVegetableResult());
         vegetableResult.getStyleClass().add("judul3");
-        vegetableResult.relocate(100, 1200);
+        vegetableResult.relocate(150, 1185);
         vegetableResult.setWrapText(true);
         vegetableResult.getStyleClass().add("impact");
 
@@ -141,6 +174,14 @@ public class ResultScene {
         viewImage4.setFitWidth(130);
         viewImage4.setFitHeight(130);
         viewImage4.relocate(15, 1180);
+
+        Line garis5 = new Line();
+        garis5.setStartX(0);
+        garis5.setStartY(1366);
+        garis5.setEndX(740);
+        garis5.setEndY(1366);
+        garis5.setStroke(Color.WHITE);
+        garis5.setStrokeWidth(1.5);
         
         Label smoke = new Label("Smoke");
         smoke.getStyleClass().add("judul1");
@@ -148,11 +189,11 @@ public class ResultScene {
         
         Label option6 = new Label(responses.getOrDefault(6, "No response")); 
         option6.getStyleClass().add("judul3");
-        option6.relocate(15, 1420);
+        option6.relocate(15, 1550);
         
         smokeResult = new Label(getSmokeResult());
         smokeResult.getStyleClass().add("judul3");
-        smokeResult.relocate(100, 1440);
+        smokeResult.relocate(150, 1425);
         smokeResult.setWrapText(true);
         smokeResult.getStyleClass().add("impact");
 
@@ -162,6 +203,14 @@ public class ResultScene {
         viewImage5.setFitWidth(130);
         viewImage5.setFitHeight(130);
         viewImage5.relocate(15, 1420);
+
+        Line garis6 = new Line();
+        garis6.setStartX(0);
+        garis6.setStartY(1606);
+        garis6.setEndX(740);
+        garis6.setEndY(1606);
+        garis6.setStroke(Color.WHITE);
+        garis6.setStrokeWidth(1.5);
         
         Rectangle rectangle = new Rectangle(740, 1700);
         rectangle.setFill(Color.web("#1A28A3"));
@@ -179,10 +228,10 @@ public class ResultScene {
         });
 
         Pane root = new Pane();
-        root.getChildren().addAll(rectangle, judulHistory, summary, buttonHome, hydration, hydrationResult, viewImage, option1,
-                exercise, exerciseResult, viewImage1, option2, sleep, sleepResult, viewImage2, 
-                option3, junkFood, junkFoodResult, viewImage3, option4, fruits, vegetableResult, viewImage4, option5, smoke,
-                smokeResult, viewImage5, option6);
+        root.getChildren().addAll(rectangle, judulHistory, summary, buttonHome, hydration, hydrationResult, viewImage, option1, garis1,
+                exercise, exerciseResult, viewImage1, option2, garis2, sleep, sleepResult, viewImage2, 
+                option3,garis3, junkFood, junkFoodResult, viewImage3, option4, garis4, fruits, vegetableResult, viewImage4, option5, garis5, smoke,
+                smokeResult, viewImage5, option6, garis6);
         root.getStyleClass().add("background");
         root.setPrefWidth(740);
         root.setPrefHeight(1700);
@@ -199,11 +248,11 @@ public class ResultScene {
         String hydrationResponse = responses.getOrDefault(0, "No response");
         switch (hydrationResponse) {
             case "Less than 1.5 L/day":
-                return "•\tImpact:\n   Dehydration, decreased kidney function, dry skin, constipation, and reduced ability of the body to regulate temperature. Chronic dehydration can lead to long-term health issues like kidney stones and urinary tract infections.";
+                return "• Impact:\nDehydration, decreased kidney function, dry skin,\nand reduced ability of the body to regulate\ntemperature. Chronic dehydration can lead to long-term\nhealth issues like kidney stones";
             case "1.5 L - 3 L/day":
-                return "•\tImpact: Generally considered adequate for most people, depending on physical activity and environmental conditions. Proper hydration supports optimal body functions, including digestion, circulation, and temperature regulation.";
+                return "• Impact:\nGenerally considered adequate for most people,\ndepending on physical activity and environmental\nconditions. Proper hydration supports optimal body\nfunctions, including digestion, circulation, and\ntemperature regulation.";
             case "More than 3 L/day":
-                return "•\tImpact: While good hydration is important, excessive water intake can cause electrolyte imbalances, such as hyponatremia. This is more common in athletes or those who drink large amounts of water quickly without adequate electrolyte intake.";
+                return "• Impact:\n While good hydration is important, excessive water\nintake can cause electrolyte imbalances. This is\nmore common in those who drink large amounts of water\nquickly without adequate electrolyte intake.";
             default:
                 return "No response provided for hydration.";
         }
@@ -213,13 +262,13 @@ public class ResultScene {
         String exerciseResponse = responses.getOrDefault(1, "No response");
         switch (exerciseResponse) {
             case "Less than 1 hour":
-                return "•\tImpact: Exercising less than 1 hour per day still provides health benefits such as improved cardiovascular fitness, and muscle strength. However, if too infrequent or too little, it may not be sufficient to effectively prevent chronic diseases.";
+                return "• Impact:\nExercising less than 1 hour per day still provides health\nbenefits such as improved cardiovascular fitness, and\nmuscle strength. However, if too infrequent, it may\nnot be sufficient to effectively preventchronic diseases.";
             case "1-2 hours":
-                return "•\tImpact: This duration of exercise is considered ideal for most people. It helps maintain a healthy weight, reduces the risk of chronic diseases such as heart disease, type 2 diabetes, and cancer, and sleep quality.\n";
+                return "• Impact:\nThis duration of exercise is considered ideal for\nmost people. It helps maintain a healthy weight,\nreduces the risk of chronic diseases such as heart\ndisease, type 2 diabetes, and cancer, and\nsleep quality.";
             case "2-3 hours":
-                return "•\tImpact: Exercising for 2 to 3 hours per day can be very beneficial, especially for those aiming for high fitness levels or having specific fitness goals. However, too much exercise without adequate rest can lead to injuries, fatigue, and other health issues.\n";
+                return "• Impact:\nExercising for 2 to 3 hours per day can be very beneficial,\nespecially for those aiming for high fitness levels\nor having specific fitness goals. However, too\nmuch exercise without adequate rest can lead\nto injuries, fatigue, and other health issues.";
             case "Never":
-                return "•\tImpact: Not exercising at all can lead to various health problems such as obesity, cardiovascular diseases, type 2 diabetes, muscle and bone weakness, and mental health issues like depression and anxiety.";
+                return "• Impact:\nNot exercising at all can lead to various healthn\nproblems such as obesity, cardiovascular diseases,\ntype 2 diabetes, muscle and bone weakness, and\nmental health issues like depression and anxiety.";
             default:
                 return "No response provided for exercise.";
         }
@@ -229,13 +278,13 @@ public class ResultScene {
         String sleepResponse = responses.getOrDefault(2, "No response");
         switch (sleepResponse) {
             case "Less than 3 hour":
-                return "•\tImpact: Chronic sleep deprivation can lead to serious issues such as cognitive impairments, decreased productivity, depression, weakened immune system, obesity, diabetes, and cardiovascular diseases";
+                return "• Impact:\nChronic sleep deprivation can lead to serious issues such\nas cognitive impairments, decreased productivity,\ndepression, weakened immune system, obesity, diabetes,\nand cardiovascular diseases";
             case "3-6 hours":
-                return "•\tImpact: Insufficient sleep can still result in decreased cognitive and physical performance, increased risk of accidents, mental health issues, and higher risk of chronic diseases like hypertension and diabetes.";
+                return "• Impact:\nInsufficient sleep can still result in decreased cognitive\nand physical performance, increased risk of accidents,\nmental health issues, and higher risk of chronic\ndiseases like hypertension and diabetes.";
             case "6-9 hours":
-                return "•\tImpact: This is the recommended sleep duration for most adults. Getting enough sleep helps maintain cognitive and physical functions, improves mental health, strengthens the immune system, and reduces the risk of chronic diseases.";
+                return "• Impact:\nThis is the recommended sleep duration for most adults.\nGetting enough sleep helps maintain cognitive and physical\nfunctions, improves mental health, strengthens\nthe immune system, and reduces the risk of chronic\ndiseases.";
             case "More  than 9 hours":
-                return "•	Impact: Excessive sleep can be associated with health issues such as depression, heart disease, and diabetes. It can also be a sign of underlying health problems like sleep apnea or other medical conditions.";
+                return "• Impact:\nExcessive sleep can be associated with health issues such\nas depression, heart disease, and diabetes. It can also\nbe a sign of underlying health problems like\nsleep apnea or other medical conditions.";
             default:
                 return "No response provided for sleep.";
         }
@@ -245,11 +294,11 @@ public class ResultScene {
         String junkFoodResponse = responses.getOrDefault(3, "No response");
         switch (junkFoodResponse) {
             case "Rarely":
-                return "•\tImpact: Consuming junk food infrequently allows for a more balanced and healthy diet, helping in the prevention of chronic diseases and maintaining a healthy weight.";
+                return "• Impact:\nConsuming junk food infrequently allows for a more\nbalanced and healthy diet, helping in the prevention of\nchronic diseases and maintaining a healthy weight.";
             case "Never":
-                return "•\tImpact: Avoiding junk food completely supports optimal health, reduces the risk of obesity, heart disease, diabetes, and other chronic conditions. It also helps maintain a balanced diet and healthy weight.";
+                return "• Impact:\nAvoiding junk food completely supports optimal health,\nreduces the risk of obesity, heart disease, diabetes, and\nother chronic conditions. It also helps maintain\na balanced diet and healthy weight.";
             case "Often":
-                return "•\tImpact: Frequent consumption of junk food is associated with an increased risk of obesity, cardiovascular diseases, type 2 diabetes, hypertension, and mental health problems such as depression. Junk food is typically high in calories, sugar, salt, and unhealthy fats.";
+                return "• Impact:\nFrequent consumption of junk food is associated with an\nincreased risk of obesity, cardiovascular diseases, type\n2 diabetes, hypertension, and mental health\nproblems such as depression. Junk food is typically high\nin calories, sugar, salt, and unhealthy fats.";
             default:
                 return "No response provided for junkfood.";
         }
@@ -259,11 +308,11 @@ public class ResultScene {
         String vegetableResponse = responses.getOrDefault(5, "No response");
         switch (vegetableResponse) {
             case "Rarely":
-                return "•\tImpact: A diet low in vegetables and fruits can increase the risk of chronic diseases, nutrient deficiencies, and digestive issues. Lack of fiber from vegetables and fruits can also cause digestive problems like constipation.";
+                return "• Impact:\nA diet low in vegetables and fruits can increase the\nrisk of chronic diseases, nutrient deficiencies, and\ndigestive issues. Lack of fiber from vegetables and\nfruits can also cause digestive problems like\nconstipation.";
             case "Never":
-                return "•\tImpact: Not consuming vegetables and fruits can lead to severe nutrient deficiencies, significant digestive problems, and a substantially increased risk of chronic diseases like heart disease, stroke, cancer, and diabetes.";
+                return "• Impact:\nNot consuming vegetables and fruits can lead to severe\nnutrient deficiencies, significant digestive problems,\nand a substantially increased risk of chronic\ndiseases like heart disease, stroke, cancer, and\ndiabetes.";
             case "Often":
-                return "•\tImpact: A diet rich in vegetables and fruits is linked to a lower risk of chronic diseases such as heart disease, stroke, cancer, and type 2 diabetes. It also helps in weight management and improves digestive health.";
+                return "• Impact:\nA diet rich in vegetables and fruits is linked to a\nlower risk of chronic diseases such as heart disease,\nstroke, cancer, and type 2 diabetes. It also helps\nin weight management and improves digestive health.";
             default:
                 return "No response provided for fruits and vegetables.";
         }
@@ -273,9 +322,9 @@ public class ResultScene {
         String smokeResponse = responses.getOrDefault(6, "No response");
         switch (smokeResponse) {
             case "Yes":
-                return "•\tImpact: Smoking is a leading cause of various serious diseases, including lung cancer, heart disease, stroke, chronic obstructive pulmonary disease (COPD), and multiple other cancers. Smoking also accelerates skin aging and can damage nearly every organ in the body.";
+                return "• Impact:\nSmoking is a leading cause of various serious diseases,\nincluding lung cancer, heart disease, stroke,\nchronic obstructive pulmonary disease (COPD), and\nmultiple other cancers. Smoking also accelerates skin\naging and can damage nearly every organ in\nthe body.";
             case "No":
-                return "•\tImpact: Not smoking is highly beneficial for long-term health. It reduces the risk of smoking-related chronic diseases, improves quality of life, and extends life expectancy.";
+                return "• Impact:\nNot smoking is highly beneficial for long-term health.\nIt reduces the risk of smoking-related chronic\ndiseases, improves quality of life, and extends\nlife expectancy.";
             default:
                 return "No response provided for smoke.";
         }
