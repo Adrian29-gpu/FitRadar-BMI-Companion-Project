@@ -1,5 +1,7 @@
 package gradle.Scenes;
 
+import java.time.LocalDate;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -37,7 +39,7 @@ public class LoginScene {
         buttonHistory.getStyleClass().add("buttonWelcome");
         buttonHistory.relocate(155, 390);
         buttonHistory.setOnAction(e -> {
-            HistoryScene historyScene = new HistoryScene(stage);
+            HistoryScene historyScene = new HistoryScene(stage, LocalDate.now());
             historyScene.show(id);
         });
 

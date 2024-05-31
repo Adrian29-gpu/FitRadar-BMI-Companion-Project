@@ -11,18 +11,26 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class HistoryScene {
     private Stage stage;
+    private LocalDate accessDate;
 
-    public HistoryScene(Stage stage) {
+    public HistoryScene(Stage stage, LocalDate accessDate) {
         this.stage = stage;
+        this.accessDate = (accessDate != null) ? accessDate : LocalDate.now();  // Menggunakan tanggal saat ini jika accessDate null
     }
+    
 
     public void show(int id) {
-        Label judulHistory = new Label("Your LifesTyle History");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+        String formattedDate = accessDate.format(formatter);
+
+        Label judulHistory = new Label("Your Lifestyle History");
         judulHistory.getStyleClass().add("judul1");
-        judulHistory.relocate(213, 30);
+        judulHistory.relocate(205, 30);
 
         Rectangle rectangle = new Rectangle(550, 400);
         rectangle.setFill(Color.web("#1A28A3"));
@@ -31,18 +39,20 @@ public class HistoryScene {
         rectangle.setLayoutX(95);
         rectangle.setLayoutY(90);
 
-        Label labelH1 = new Label("Date: ");
+        Label labelH1 = new Label("Date: " + formattedDate);
         labelH1.getStyleClass().add("history");
-        
+
         Button btnH1 = new Button("Result");
         btnH1.getStyleClass().add("buttonHistory");
-        
-        HBox history1 = new HBox(0);
+
+        HBox history1 = new HBox(10); // Mengubah spacing sesuai kebutuhan
         history1.getStyleClass().add("hboxHistory");
         history1.getChildren().addAll(labelH1, btnH1);
-        history1.setLayoutX(100);
-        history1.setLayoutY(95);
-        history1.setAlignment(Pos.CENTER_RIGHT);
+        history1.setLayoutX(120);
+        history1.setLayoutY(100);
+        history1.setAlignment(Pos.CENTER_LEFT);
+
+        
 
         Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/home2.jpg"));
         ImageView imageBack = new ImageView(logoBack);
@@ -66,5 +76,4 @@ public class HistoryScene {
         stage.setScene(scene);
         stage.show();
     }
-
 }

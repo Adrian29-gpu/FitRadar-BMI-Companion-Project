@@ -71,8 +71,11 @@
     -fx-background-color: #ffffff;
     -fx-padding: 10px;
     -fx-spacing: 10px;
-    -fx-pref-width: 300;
+    -fx-pref-width: 500px;  
+    -fx-background-radius: 25px; 
+    
 }
+
 
 .history {
     -fx-font-family: "Arial";
