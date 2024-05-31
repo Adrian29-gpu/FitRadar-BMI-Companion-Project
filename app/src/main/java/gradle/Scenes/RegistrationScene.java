@@ -100,8 +100,12 @@ public class RegistrationScene {
                 error1.setText("Data must be required!");
                 error1.relocate(305, 450);
                 return;
+            } else if (password.length() < 8) {
+                error1.setText("Password is at least 8 characters");
+                error1.relocate(305, 450);
+                return;
             } else if (!password.equals(repassword)) {
-                error1.setText("Passwords do not match! Please re-enter.");
+                error1.setText("Password do not match! Please re-enter");
                 error1.relocate(305, 450);
                 return;
             }
