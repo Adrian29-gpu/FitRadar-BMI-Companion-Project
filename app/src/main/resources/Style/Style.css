@@ -39,6 +39,20 @@
     -fx-font-weight: bold;
 }
 
+.judul2{
+    -fx-font-family: "Arial";
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-font-size: 45px;
+    -fx-font-weight: bold;
+}
+
+.judul3{
+    -fx-font-family: "Arial";
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
 .inputan{
     -fx-font-family: "Arial";
     -fx-text-fill: rgb(255, 255, 255);

@@ -2,7 +2,6 @@ package gradle.Scenes;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,7 +12,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -235,7 +233,7 @@ public class InputScene {
                 errorLabel.setVisible(false);
                 confirmedResponses.addAll(responses.keySet());
                 System.out.println("Confirmed responses: " + responses);
-                ResultScene resultScene = new ResultScene(stage);
+                ResultScene resultScene = new ResultScene(stage, responses);
                     resultScene.show();
                 
             }
