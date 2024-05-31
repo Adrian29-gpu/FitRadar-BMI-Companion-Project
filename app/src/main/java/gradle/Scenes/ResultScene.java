@@ -51,11 +51,11 @@ public class ResultScene {
         hydrationResult.setWrapText(true);
         hydrationResult.getStyleClass().add("impact");
 
-        Image air = new Image(getClass().getResourceAsStream("/Style/foto/water.jpg"));
+        Image air = new Image(getClass().getResourceAsStream("/Style/foto/Water.PNG"));
         ImageView viewImage = new ImageView(air);
         viewImage.setPreserveRatio(true);
-        viewImage.setFitWidth(100);
-        viewImage.setFitHeight(100);
+        viewImage.setFitWidth(130);
+        viewImage.setFitHeight(130);
         viewImage.relocate(15, 180);
         
         Label exercise = new Label("Exercise");
@@ -65,12 +65,19 @@ public class ResultScene {
         Label option2 = new Label(responses.getOrDefault(1, "No response")); 
         option2.getStyleClass().add("judul3");
         option2.relocate(15, 440);
-
+        
         exerciseResult = new Label(getExerciseResult());
         exerciseResult.getStyleClass().add("judul3");
         exerciseResult.relocate(100, 460);
         exerciseResult.setWrapText(true);
         exerciseResult.getStyleClass().add("impact");
+
+        Image exercisee = new Image(getClass().getResourceAsStream("/Style/foto/Exercise.PNG"));
+        ImageView viewImage1 = new ImageView(exercisee);
+        viewImage1.setPreserveRatio(true);
+        viewImage1.setFitWidth(130);
+        viewImage1.setFitHeight(130);
+        viewImage1.relocate(15, 440);
         
         Label sleep = new Label("Sleep");
         sleep.getStyleClass().add("judul1");
@@ -79,12 +86,19 @@ public class ResultScene {
         Label option3 = new Label(responses.getOrDefault(2, "No response")); 
         option3.getStyleClass().add("judul3");
         option3.relocate(15, 700);
-
+        
         sleepResult = new Label(getSleepResult());
         sleepResult.getStyleClass().add("judul3");
         sleepResult.relocate(100, 720);
         sleepResult.setWrapText(true);
         sleepResult.getStyleClass().add("impact");
+
+        Image sleepp = new Image(getClass().getResourceAsStream("/Style/foto/Sleep.PNG"));
+        ImageView viewImage2 = new ImageView(sleepp);
+        viewImage2.setPreserveRatio(true);
+        viewImage2.setFitWidth(130);
+        viewImage2.setFitHeight(130);
+        viewImage2.relocate(15, 700);
         
         Label junkFood = new Label("Junk Food");
         junkFood.getStyleClass().add("judul1");
@@ -93,12 +107,19 @@ public class ResultScene {
         Label option4 = new Label(responses.getOrDefault(3, "No response")); 
         option4.getStyleClass().add("judul3");
         option4.relocate(15, 940);
-
+        
         junkFoodResult = new Label(getJunkfoodResult());
         junkFoodResult.getStyleClass().add("judul3");
         junkFoodResult.relocate(100, 960);
         junkFoodResult.setWrapText(true);
         junkFoodResult.getStyleClass().add("impact");
+
+        Image junk = new Image(getClass().getResourceAsStream("/Style/foto/Junkfood.PNG"));
+        ImageView viewImage3 = new ImageView(junk);
+        viewImage3.setPreserveRatio(true);
+        viewImage3.setFitWidth(130);
+        viewImage3.setFitHeight(130);
+        viewImage3.relocate(15, 940);
         
         Label fruits = new Label("Fruits and Vegetables");
         fruits.getStyleClass().add("judul1");
@@ -113,6 +134,13 @@ public class ResultScene {
         vegetableResult.relocate(100, 1200);
         vegetableResult.setWrapText(true);
         vegetableResult.getStyleClass().add("impact");
+
+        Image vegetable = new Image(getClass().getResourceAsStream("/Style/foto/Fruits.PNG"));
+        ImageView viewImage4 = new ImageView(vegetable);
+        viewImage4.setPreserveRatio(true);
+        viewImage4.setFitWidth(130);
+        viewImage4.setFitHeight(130);
+        viewImage4.relocate(15, 1180);
         
         Label smoke = new Label("Smoke");
         smoke.getStyleClass().add("judul1");
@@ -121,12 +149,19 @@ public class ResultScene {
         Label option6 = new Label(responses.getOrDefault(6, "No response")); 
         option6.getStyleClass().add("judul3");
         option6.relocate(15, 1420);
-
+        
         smokeResult = new Label(getSmokeResult());
         smokeResult.getStyleClass().add("judul3");
         smokeResult.relocate(100, 1440);
         smokeResult.setWrapText(true);
         smokeResult.getStyleClass().add("impact");
+
+        Image smoking = new Image(getClass().getResourceAsStream("/Style/foto/Smoke.PNG"));
+        ImageView viewImage5 = new ImageView(smoking);
+        viewImage5.setPreserveRatio(true);
+        viewImage5.setFitWidth(130);
+        viewImage5.setFitHeight(130);
+        viewImage5.relocate(15, 1420);
         
         Rectangle rectangle = new Rectangle(740, 1700);
         rectangle.setFill(Color.web("#1A28A3"));
@@ -145,8 +180,9 @@ public class ResultScene {
 
         Pane root = new Pane();
         root.getChildren().addAll(rectangle, judulHistory, summary, buttonHome, hydration, hydrationResult, viewImage, option1,
-                exercise, exerciseResult, option2, sleep, sleepResult, option3, junkFood, junkFoodResult, option4, fruits, vegetableResult, option5, smoke,
-                smokeResult, option6);
+                exercise, exerciseResult, viewImage1, option2, sleep, sleepResult, viewImage2, 
+                option3, junkFood, junkFoodResult, viewImage3, option4, fruits, vegetableResult, viewImage4, option5, smoke,
+                smokeResult, viewImage5, option6);
         root.getStyleClass().add("background");
         root.setPrefWidth(740);
         root.setPrefHeight(1700);
