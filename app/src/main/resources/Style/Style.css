@@ -192,3 +192,8 @@
     -fx-border-width: 2px;
     -fx-border-style: solid;
 }
+
+.custom-scroll-pane .viewport {
+    -fx-background-color: rgba(5, 0, 131, 0.5); /* Gunakan RGBA dengan nilai alpha */
+    -fx-border-color: rgba(5, 0, 131, 0.5); /* Border color dengan alpha yang sama */
+}

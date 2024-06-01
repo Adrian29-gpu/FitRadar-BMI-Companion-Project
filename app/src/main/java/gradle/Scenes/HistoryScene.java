@@ -35,7 +35,40 @@ public class HistoryScene {
         judulHistory.getStyleClass().add("judul1");
         judulHistory.relocate(205, 30);
 
-        Rectangle rectangle = new Rectangle(550, 1690);
+        VBox riwayat = new VBox();
+        riwayat.setSpacing(10);
+        riwayat.setAlignment(Pos.TOP_CENTER);
+
+        for (History history : histories) {
+            Label labelH1 = new Label("Date: " + history.getDate());
+            labelH1.getStyleClass().add("history");
+
+            Button btnH1 = new Button("Result");
+            btnH1.getStyleClass().add("buttonHistory");
+
+            btnH1.setOnAction(e -> {
+                HistoryDetailScene historyDetailScene = new HistoryDetailScene(stage);
+                historyDetailScene.show(id, history.getId());
+            });
+
+            HBox history1 = new HBox(10);
+            history1.getStyleClass().add("hboxHistory");
+            history1.getChildren().addAll(labelH1, btnH1);
+            history1.setAlignment(Pos.CENTER_LEFT);
+
+            riwayat.getChildren().add(history1);
+        }
+
+        ScrollPane scrollPane = new ScrollPane(riwayat);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setPrefViewportHeight(370);
+        scrollPane.setLayoutX(114);
+        scrollPane.setLayoutY(100);
+        scrollPane.getStyleClass().add("custom-scroll-pane");
+
+        Pane root = new Pane();
+
+        Rectangle rectangle = new Rectangle(550, 400 + 150);
         rectangle.setFill(Color.web("#1A28A3"));
         rectangle.setOpacity(0.50);
         rectangle.setStrokeWidth(2);
@@ -50,44 +83,19 @@ public class HistoryScene {
         Button btnBack = new Button();
         btnBack.setGraphic(imageBack);
         btnBack.getStyleClass().add("buttonBack");
-        btnBack.relocate(322, 1740);
+        btnBack.setLayoutX(322);
+        btnBack.setLayoutY(rectangle.getHeight() - 60); 
         btnBack.setOnAction(e -> {
             LoginScene loginScene = new LoginScene(stage);
             loginScene.show(id);
         });
 
-        VBox riwayat = new VBox();
-        riwayat.relocate(114, 100);
-        riwayat.setSpacing(10);
-
-        for (History history : histories) {
-            Label labelH1 = new Label("Date: " + history.getDate());
-            labelH1.getStyleClass().add("history");
-
-            Button btnH1 = new Button("Result");
-            btnH1.getStyleClass().add("buttonHistory");
-
-            btnH1.setOnAction(e -> {
-                HistoryDetailScene historyDetailScene = new HistoryDetailScene(stage);
-                historyDetailScene.show(id, history.getId());
-            });
-            HBox history1 = new HBox(10);
-            history1.getStyleClass().add("hboxHistory");
-            history1.getChildren().addAll(labelH1, btnH1);
-            history1.setLayoutX(112);
-            history1.setLayoutY(110);
-            history1.setAlignment(Pos.CENTER_LEFT);
-
-            riwayat.getChildren().add(history1);
-        }
-        Pane root = new Pane();
-        root.getChildren().addAll(rectangle, judulHistory, btnBack, riwayat);
+        root.getChildren().addAll(rectangle, judulHistory, scrollPane, btnBack);
         root.getStyleClass().add("background");
         root.setPrefWidth(740);
-        root.setPrefHeight(1800);
-        ScrollPane scrollPane = new ScrollPane(root);
+        root.setPrefHeight(rectangle.getHeight() + 100);
 
-        Scene scene = new Scene(scrollPane, 740, 580);
+        Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
