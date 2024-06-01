@@ -8,25 +8,26 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import gradle.Models.History;
+import gradle.controllers.HistoryControllers;
 
 public class HistoryScene {
     private Stage stage;
-    private LocalDate accessDate;
 
     public HistoryScene(Stage stage, LocalDate accessDate) {
         this.stage = stage;
-        this.accessDate = (accessDate != null) ? accessDate : LocalDate.now();  // Menggunakan tanggal saat ini jika accessDate null
     }
     
 
     public void show(int id) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
-        String formattedDate = accessDate.format(formatter);
+        List<History> histories = HistoryControllers.getAllHistoryByUserId(id);
 
         Label judulHistory = new Label("Your Lifestyle History");
         judulHistory.getStyleClass().add("judul1");
@@ -39,21 +40,9 @@ public class HistoryScene {
         rectangle.setLayoutX(95);
         rectangle.setLayoutY(90);
 
-        Label labelH1 = new Label("Date: " + formattedDate);
-        labelH1.getStyleClass().add("history");
-
-        Button btnH1 = new Button("Result");
-        btnH1.getStyleClass().add("buttonHistory");
-
-        HBox history1 = new HBox(10); // Mengubah spacing sesuai kebutuhan
-        history1.getStyleClass().add("hboxHistory");
-        history1.getChildren().addAll(labelH1, btnH1);
-        history1.setLayoutX(112);
-        history1.setLayoutY(110);
-        history1.setAlignment(Pos.CENTER_LEFT);
-
         
-
+        
+        
         Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/home2.jpg"));
         ImageView imageBack = new ImageView(logoBack);
         imageBack.setPreserveRatio(true);
@@ -67,9 +56,33 @@ public class HistoryScene {
             LoginScene loginScene = new LoginScene(stage);
             loginScene.show(id);
         });
+        
+        VBox riwayat = new VBox();
 
+        for (History history : histories){
+            Label labelH1 = new Label("Date: " + history.getDate());
+            labelH1.getStyleClass().add("history");
+    
+            Button btnH1 = new Button("Result");
+            btnH1.getStyleClass().add("buttonHistory");
+
+            btnH1.setOnAction(e -> {
+                HistoryDetailScene historyDetailScene = new HistoryDetailScene(stage);
+                historyDetailScene.show(id, history.getId());
+            });
+            HBox history1 = new HBox(10); // Mengubah spacing sesuai kebutuhan
+            history1.getStyleClass().add("hboxHistory");
+            history1.getChildren().addAll(labelH1, btnH1);
+            history1.setLayoutX(112);
+            history1.setLayoutY(110);
+            history1.setAlignment(Pos.CENTER_LEFT);
+
+            riwayat.getChildren().add(history1);
+        }
         Pane root = new Pane();
-        root.getChildren().addAll(rectangle, judulHistory, btnBack, history1);
+        root.getChildren().addAll(rectangle, judulHistory, btnBack, riwayat);
+        
+
         root.getStyleClass().add("background");
         Scene scene = new Scene(root, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());

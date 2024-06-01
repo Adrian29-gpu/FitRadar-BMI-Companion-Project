@@ -12,6 +12,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -30,6 +33,7 @@ public class InputScene {
     public void show(int id) {
         Map<Integer, String> responses = new HashMap<>(); // Untuk menyimpan respons sementara
         Set<Integer> confirmedResponses = new HashSet<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
 
         EventHandler<ActionEvent> buttonHandler = event -> {
             Button clickedButton = (Button) event.getSource();
@@ -49,11 +53,6 @@ public class InputScene {
                 clickedButton.getStyleClass().add("buttonSelected");
                 clickedButton.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-border-style: solid;");
                 lastSelectedButtons.put(questionIndex, clickedButton); // Update the last selected button
-
-                System.out.println(questionIndex + " " + clickedButton.getText());
-            } else {
-                System.out.println("Response for question " + questionIndex
-                        + " has already been confirmed and cannot be changed.");
             }
         };
 
@@ -81,6 +80,7 @@ public class InputScene {
         input7.getStyleClass().add("inputan");
         input7.relocate(273, 1045);
 
+        LocalDate today = LocalDate.now();
         // Membuat HBox untuk tombol
         HBox buttonBox = new HBox(35);
         buttonBox.setLayoutX(30);
@@ -233,9 +233,8 @@ public class InputScene {
             } else {
                 errorLabel.setVisible(false);
                 confirmedResponses.addAll(responses.keySet());
-                System.out.println("Confirmed responses: " + responses);
                 boolean isSuccess = HistoryControllers.addHistory(id, responses.get(0), responses.get(1),
-                        responses.get(2), responses.get(3), responses.get(5), responses.get(6));
+                        responses.get(2), responses.get(3), responses.get(5), responses.get(6), today.format(formatter));
                 if (isSuccess) {
                     ResultScene resultScene = new ResultScene(stage, responses);
                         resultScene.show(id);
