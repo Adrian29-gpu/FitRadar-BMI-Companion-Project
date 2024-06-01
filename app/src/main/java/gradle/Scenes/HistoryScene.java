@@ -14,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 
 import gradle.Models.History;
@@ -29,6 +30,7 @@ public class HistoryScene {
 
     public void show(int id) {
         List<History> histories = HistoryControllers.getAllHistoryByUserId(id);
+        Collections.reverse(histories);
 
         Label judulHistory = new Label("Your Lifestyle History");
         judulHistory.getStyleClass().add("judul1");
