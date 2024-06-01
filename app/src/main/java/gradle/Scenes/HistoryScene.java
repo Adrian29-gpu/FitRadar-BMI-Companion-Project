@@ -58,6 +58,8 @@ public class HistoryScene {
         });
         
         VBox riwayat = new VBox();
+        riwayat.relocate(114, 100);
+        riwayat.setSpacing(10);
 
         for (History history : histories){
             Label labelH1 = new Label("Date: " + history.getDate());
