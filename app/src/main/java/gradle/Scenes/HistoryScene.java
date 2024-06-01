@@ -42,6 +42,7 @@ public class HistoryScene {
         for (History history : histories) {
             Label labelH1 = new Label("Date: " + history.getDate());
             labelH1.getStyleClass().add("history");
+            labelH1.setPrefWidth(250);
 
             Button btnH1 = new Button("Result");
             btnH1.getStyleClass().add("buttonHistory");

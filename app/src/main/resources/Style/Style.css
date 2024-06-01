@@ -70,7 +70,7 @@
 .hboxHistory {
     -fx-background-color: #ffffff;
     -fx-padding: 10px;
-    -fx-spacing: 150px;
+    -fx-spacing: 120px;
     -fx-background-radius: 25px;
     -fx-pref-height: 60px;
 }
