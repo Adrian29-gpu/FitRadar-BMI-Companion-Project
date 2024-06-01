@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class RegisterSuccess extends AbstractScene{
+public class RegisterSuccess extends AbstractScene {
 
     public RegisterSuccess(Stage stage) {
         super(stage);

@@ -104,7 +104,7 @@ public class RegistrationScene extends AbstractScene {
                 error1.setText("Passwords do not match! Please re-enter");
                 error1.relocate(255, 450);
                 return;
-            } else if (password.length() < 8){
+            } else if (password.length() < 8) {
                 error1.setText("Passwords at least 8 character");
                 error1.relocate(285, 450);
                 return;

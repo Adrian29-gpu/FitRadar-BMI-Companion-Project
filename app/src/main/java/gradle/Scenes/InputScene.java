@@ -42,17 +42,15 @@ public class InputScene {
             if (!confirmedResponses.contains(questionIndex)) {
                 responses.put(questionIndex, clickedButton.getText());
 
-                // Remove style from previously selected button, if any
                 Button previousSelectedButton = lastSelectedButtons.get(questionIndex);
                 if (previousSelectedButton != null) {
                     previousSelectedButton.getStyleClass().removeAll("buttonSelected");
-                    previousSelectedButton.setStyle(""); // Remove any custom styles like borders
+                    previousSelectedButton.setStyle("");
                 }
 
-                // Set style for the current selected button
                 clickedButton.getStyleClass().add("buttonSelected");
                 clickedButton.setStyle("-fx-border-color: red; -fx-border-width: 2px; -fx-border-style: solid;");
-                lastSelectedButtons.put(questionIndex, clickedButton); // Update the last selected button
+                lastSelectedButtons.put(questionIndex, clickedButton);
             }
         };
 
@@ -98,10 +96,6 @@ public class InputScene {
         buttonBox4.setLayoutX(30);
         buttonBox4.setLayoutY(785);
 
-        // HBox buttonBox5 = new HBox(35);
-        // buttonBox5.setLayoutX(30);
-        // buttonBox5.setLayoutY(960);
-
         HBox buttonBox6 = new HBox(35);
         buttonBox6.setLayoutX(30);
         buttonBox6.setLayoutY(960);
@@ -110,7 +104,6 @@ public class InputScene {
         buttonBox7.setLayoutX(145);
         buttonBox7.setLayoutY(1105);
 
-        // Membuat tombol
         Button option1 = new Button("Less than 1.5 L/day");
         option1.setId("0-1");
         option1.setOnAction(buttonHandler);
@@ -214,7 +207,6 @@ public class InputScene {
         errorLabel.setLayoutY(1370);
         errorLabel.setVisible(false);
 
-        // Menambahkan tombol ke HBox
         buttonBox.getChildren().addAll(option1, option2, option3);
         buttonBox2.getChildren().addAll(option4, option5, option6);
         buttonBox3.getChildren().addAll(option8, option9, option10);
@@ -227,17 +219,18 @@ public class InputScene {
         buttonResult.setLayoutX(260);
         buttonResult.setLayoutY(1225);
         buttonResult.setOnAction(e -> {
-            if (responses.size() < 6) { // Assuming there are 6 questions to answer
+            if (responses.size() < 6) {
                 errorLabel.setText("All data must be filled!");
                 errorLabel.setVisible(true);
             } else {
                 errorLabel.setVisible(false);
                 confirmedResponses.addAll(responses.keySet());
                 boolean isSuccess = HistoryControllers.addHistory(id, responses.get(0), responses.get(1),
-                        responses.get(2), responses.get(3), responses.get(5), responses.get(6), today.format(formatter));
+                        responses.get(2), responses.get(3), responses.get(5), responses.get(6),
+                        today.format(formatter));
                 if (isSuccess) {
                     ResultScene resultScene = new ResultScene(stage, responses);
-                        resultScene.show(id);
+                    resultScene.show(id);
                 }
 
             }
@@ -254,7 +247,7 @@ public class InputScene {
         btnBack.relocate(15, 1300);
         btnBack.setOnAction(e -> {
             LoginScene loginScene = new LoginScene(stage);
-                loginScene.show(id);
+            loginScene.show(id);
         });
 
         Pane root = new Pane();
@@ -265,13 +258,6 @@ public class InputScene {
         root.setPrefHeight(1370);
 
         ScrollPane scrollPane = new ScrollPane(root);
-        // scrollPane.setFitToWidth(true);
-        // scrollPane.setFitToHeight(true);
-
-        // Image imageBackground = new
-        // Image(getClass().getResourceAsStream("/Style/foto/MyLifeStyle.jpg"));
-        // ImageView imageViewBackground = new ImageView(imageBackground);
-        // StackPane stackPane = new StackPane(scrollPane,imageViewBackground);
 
         Scene scene = new Scene(scrollPane, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());

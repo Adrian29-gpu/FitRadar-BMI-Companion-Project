@@ -83,19 +83,4 @@ public class HistoryControllers extends DbConfig {
         }
         return history;
     }
-
-    // // DELETE
-    // public static boolean deleteHistory(int user_id) {
-    // query = "DELETE FROM books WHERE user_id=?";
-    // try {
-    // getConnection();
-    // preparedStatement = connection.prepareStatement(query);
-    // preparedStatement.setInt(1, user_id);
-    // preparedStatement.executeUpdate();
-    // return true;
-    // } catch (Exception e) {
-    // e.printStackTrace();
-    // }
-    // return false;
-    // }
 }

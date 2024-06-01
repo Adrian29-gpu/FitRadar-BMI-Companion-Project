@@ -26,7 +26,6 @@ public class HistoryScene {
     public HistoryScene(Stage stage, LocalDate accessDate) {
         this.stage = stage;
     }
-    
 
     public void show(int id) {
         List<History> histories = HistoryControllers.getAllHistoryByUserId(id);
@@ -43,9 +42,6 @@ public class HistoryScene {
         rectangle.setLayoutX(95);
         rectangle.setLayoutY(90);
 
-        
-        
-        
         Image logoBack = new Image(getClass().getResourceAsStream("/Style/foto/home2.jpg"));
         ImageView imageBack = new ImageView(logoBack);
         imageBack.setPreserveRatio(true);
@@ -59,15 +55,15 @@ public class HistoryScene {
             LoginScene loginScene = new LoginScene(stage);
             loginScene.show(id);
         });
-        
+
         VBox riwayat = new VBox();
         riwayat.relocate(114, 100);
         riwayat.setSpacing(10);
 
-        for (History history : histories){
+        for (History history : histories) {
             Label labelH1 = new Label("Date: " + history.getDate());
             labelH1.getStyleClass().add("history");
-    
+
             Button btnH1 = new Button("Result");
             btnH1.getStyleClass().add("buttonHistory");
 
@@ -75,7 +71,7 @@ public class HistoryScene {
                 HistoryDetailScene historyDetailScene = new HistoryDetailScene(stage);
                 historyDetailScene.show(id, history.getId());
             });
-            HBox history1 = new HBox(10); // Mengubah spacing sesuai kebutuhan
+            HBox history1 = new HBox(10);
             history1.getStyleClass().add("hboxHistory");
             history1.getChildren().addAll(labelH1, btnH1);
             history1.setLayoutX(112);
@@ -90,7 +86,6 @@ public class HistoryScene {
         root.setPrefWidth(740);
         root.setPrefHeight(1800);
         ScrollPane scrollPane = new ScrollPane(root);
-
 
         Scene scene = new Scene(scrollPane, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());

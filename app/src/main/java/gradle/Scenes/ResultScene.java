@@ -22,7 +22,6 @@ public class ResultScene {
     private Label junkFoodResult;
     private Label smokeResult;
     private Label vegetableResult;
-    
 
     public ResultScene(Stage stage, Map<Integer, String> responses) {
         this.stage = stage;
@@ -42,7 +41,7 @@ public class ResultScene {
         hydration.getStyleClass().add("judul1");
         hydration.relocate(15, 140);
 
-        Label option1 = new Label(responses.getOrDefault(0, "No response")); 
+        Label option1 = new Label(responses.getOrDefault(0, "No response"));
         option1.getStyleClass().add("judul3");
         option1.relocate(15, 310);
 
@@ -66,15 +65,15 @@ public class ResultScene {
         viewImage.setFitWidth(130);
         viewImage.setFitHeight(130);
         viewImage.relocate(15, 180);
-        
+
         Label exercise = new Label("Exercise");
         exercise.getStyleClass().add("judul1");
         exercise.relocate(15, 400);
-        
-        Label option2 = new Label(responses.getOrDefault(1, "No response")); 
+
+        Label option2 = new Label(responses.getOrDefault(1, "No response"));
         option2.getStyleClass().add("judul3");
         option2.relocate(15, 570);
-        
+
         exerciseResult = new Label(getExerciseResult());
         exerciseResult.getStyleClass().add("judul3");
         exerciseResult.relocate(150, 445);
@@ -95,15 +94,15 @@ public class ResultScene {
         garis2.setEndY(626);
         garis2.setStroke(Color.WHITE);
         garis2.setStrokeWidth(1.5);
-        
+
         Label sleep = new Label("Sleep");
         sleep.getStyleClass().add("judul1");
         sleep.relocate(15, 660);
-        
-        Label option3 = new Label(responses.getOrDefault(2, "No response")); 
+
+        Label option3 = new Label(responses.getOrDefault(2, "No response"));
         option3.getStyleClass().add("judul3");
         option3.relocate(15, 830);
-        
+
         sleepResult = new Label(getSleepResult());
         sleepResult.getStyleClass().add("judul3");
         sleepResult.relocate(150, 705);
@@ -124,15 +123,15 @@ public class ResultScene {
         garis3.setEndY(886);
         garis3.setStroke(Color.WHITE);
         garis3.setStrokeWidth(1.5);
-        
+
         Label junkFood = new Label("Junk Food");
         junkFood.getStyleClass().add("judul1");
         junkFood.relocate(15, 900);
-        
-        Label option4 = new Label(responses.getOrDefault(3, "No response")); 
+
+        Label option4 = new Label(responses.getOrDefault(3, "No response"));
         option4.getStyleClass().add("judul3");
         option4.relocate(15, 1070);
-        
+
         junkFoodResult = new Label(getJunkfoodResult());
         junkFoodResult.getStyleClass().add("judul3");
         junkFoodResult.relocate(150, 945);
@@ -153,15 +152,15 @@ public class ResultScene {
         garis4.setEndY(1126);
         garis4.setStroke(Color.WHITE);
         garis4.setStrokeWidth(1.5);
-        
+
         Label fruits = new Label("Fruits and Vegetables");
         fruits.getStyleClass().add("judul1");
         fruits.relocate(15, 1140);
-        
-        Label option5 = new Label(responses.getOrDefault(5, "No response")); 
+
+        Label option5 = new Label(responses.getOrDefault(5, "No response"));
         option5.getStyleClass().add("judul3");
         option5.relocate(15, 1310);
-        
+
         vegetableResult = new Label(getVegetableResult());
         vegetableResult.getStyleClass().add("judul3");
         vegetableResult.relocate(150, 1185);
@@ -182,15 +181,15 @@ public class ResultScene {
         garis5.setEndY(1366);
         garis5.setStroke(Color.WHITE);
         garis5.setStrokeWidth(1.5);
-        
+
         Label smoke = new Label("Smoke");
         smoke.getStyleClass().add("judul1");
         smoke.relocate(15, 1380);
-        
-        Label option6 = new Label(responses.getOrDefault(6, "No response")); 
+
+        Label option6 = new Label(responses.getOrDefault(6, "No response"));
         option6.getStyleClass().add("judul3");
         option6.relocate(15, 1550);
-        
+
         smokeResult = new Label(getSmokeResult());
         smokeResult.getStyleClass().add("judul3");
         smokeResult.relocate(150, 1425);
@@ -211,7 +210,7 @@ public class ResultScene {
         garis6.setEndY(1606);
         garis6.setStroke(Color.WHITE);
         garis6.setStrokeWidth(1.5);
-        
+
         Rectangle rectangle = new Rectangle(740, 1700);
         rectangle.setFill(Color.web("#1A28A3"));
         rectangle.setOpacity(0.50);
@@ -228,9 +227,11 @@ public class ResultScene {
         });
 
         Pane root = new Pane();
-        root.getChildren().addAll(rectangle, judulHistory, summary, buttonHome, hydration, hydrationResult, viewImage, option1, garis1,
-                exercise, exerciseResult, viewImage1, option2, garis2, sleep, sleepResult, viewImage2, 
-                option3,garis3, junkFood, junkFoodResult, viewImage3, option4, garis4, fruits, vegetableResult, viewImage4, option5, garis5, smoke,
+        root.getChildren().addAll(rectangle, judulHistory, summary, buttonHome, hydration, hydrationResult, viewImage,
+                option1, garis1,
+                exercise, exerciseResult, viewImage1, option2, garis2, sleep, sleepResult, viewImage2,
+                option3, garis3, junkFood, junkFoodResult, viewImage3, option4, garis4, fruits, vegetableResult,
+                viewImage4, option5, garis5, smoke,
                 smokeResult, viewImage5, option6, garis6);
         root.getStyleClass().add("background");
         root.setPrefWidth(740);
