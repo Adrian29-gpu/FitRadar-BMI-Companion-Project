@@ -62,14 +62,14 @@ public class HistoryScene {
 
         ScrollPane scrollPane = new ScrollPane(riwayat);
         scrollPane.setFitToWidth(true);
-        scrollPane.setPrefViewportHeight(370);
-        scrollPane.setLayoutX(114);
+        scrollPane.setPrefViewportHeight(325);
+        scrollPane.setLayoutX(100);
         scrollPane.setLayoutY(100);
         scrollPane.getStyleClass().add("custom-scroll-pane");
 
         Pane root = new Pane();
 
-        Rectangle rectangle = new Rectangle(550, 400 + 150);
+        Rectangle rectangle = new Rectangle(550, 400);
         rectangle.setFill(Color.web("#1A28A3"));
         rectangle.setOpacity(0.50);
         rectangle.setStrokeWidth(2);
@@ -85,7 +85,7 @@ public class HistoryScene {
         btnBack.setGraphic(imageBack);
         btnBack.getStyleClass().add("buttonBack");
         btnBack.setLayoutX(322);
-        btnBack.setLayoutY(rectangle.getHeight() - 60); 
+        btnBack.setLayoutY(rectangle.getHeight() + 50); 
         btnBack.setOnAction(e -> {
             LoginScene loginScene = new LoginScene(stage);
             loginScene.show(id);

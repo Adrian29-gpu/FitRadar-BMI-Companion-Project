@@ -1,5 +1,7 @@
 package gradle.Scenes;
 
+import java.time.LocalDate;
+
 import gradle.Models.History;
 import gradle.controllers.HistoryControllers;
 import javafx.scene.Scene;
@@ -223,8 +225,8 @@ public class HistoryDetailScene {
         buttonHome.getStyleClass().add("buttonLogin");
         buttonHome.relocate(260, 1650);
         buttonHome.setOnAction(e -> {
-            LoginScene loginScene = new LoginScene(stage);
-            loginScene.show(id);
+            HistoryScene historyScene = new HistoryScene(stage, LocalDate.now());
+            historyScene.show(id);
         });
 
         Pane root = new Pane();
@@ -235,10 +237,10 @@ public class HistoryDetailScene {
                 viewImage4, option5, garis5, smoke,
                 smokeResult, viewImage5, option6, garis6);
         root.getStyleClass().add("background");
-        root.setPrefWidth(740);
+        root.setPrefWidth(725);
         root.setPrefHeight(1700);
         ScrollPane scrollPane = new ScrollPane(root);
-
+        scrollPane.setPrefWidth(720);
         Scene scene = new Scene(scrollPane, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
         stage.setScene(scene);

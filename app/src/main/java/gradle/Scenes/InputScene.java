@@ -254,11 +254,11 @@ public class InputScene {
         root.getChildren().addAll(input, buttonBox, input2, buttonBox2, option7, input3, buttonBox3, option11, input4,
                 buttonBox4, input6, buttonBox6, input7, buttonBox7, buttonResult, btnBack);
         root.getStyleClass().add("background");
-        root.setPrefWidth(740);
+        root.setPrefWidth(725);
         root.setPrefHeight(1370);
 
         ScrollPane scrollPane = new ScrollPane(root);
-
+        scrollPane.setPrefWidth(720);
         Scene scene = new Scene(scrollPane, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
         stage.setScene(scene);

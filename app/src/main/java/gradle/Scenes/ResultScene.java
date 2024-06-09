@@ -234,10 +234,10 @@ public class ResultScene {
                 viewImage4, option5, garis5, smoke,
                 smokeResult, viewImage5, option6, garis6);
         root.getStyleClass().add("background");
-        root.setPrefWidth(740);
+        root.setPrefWidth(725);
         root.setPrefHeight(1700);
         ScrollPane scrollPane = new ScrollPane(root);
-
+        scrollPane.setPrefWidth(720);
         Scene scene = new Scene(scrollPane, 740, 580);
         scene.getStylesheets().add(getClass().getResource("/Style/Style.css").toExternalForm());
         stage.setScene(scene);

@@ -189,11 +189,27 @@
 .buttonInput:pressed,
 .buttonInput:selected {
     -fx-border-color: red;
-    -fx-border-width: 2px;
-    -fx-border-style: solid;
+    -fx-border-width: 0.5px;
+    -fx-border-style: slid;
+}
+
+.custom-scroll-pane {
+    -fx-background: transparent;
+    -fx-padding: 10;
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
 }
 
 .custom-scroll-pane .viewport {
-    -fx-background-color: #050083;
-    -fx-border-color: #050083;
+    -fx-background-color: transparent;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .track,
+.custom-scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: transparent;
+}
+
+.custom-scroll-pane .scroll-bar:vertical .thumb,
+.custom-scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #979797;
 }

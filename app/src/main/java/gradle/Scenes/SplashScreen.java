@@ -28,11 +28,11 @@ public class SplashScreen extends AbstractScene {
         imageView.setPreserveRatio(true);
 
         Label labelLoading = new Label("Loading...");
-        labelLoading.setFont(Font.font("Arial", FontWeight.BOLD, 35));
+        labelLoading.setFont(Font.font("Arial", FontWeight.BOLD, 30));
         labelLoading.setTextFill(Color.WHITE);
         VBox vBoxLoading = new VBox(labelLoading);
         vBoxLoading.setAlignment(Pos.BOTTOM_CENTER);
-        vBoxLoading.setPadding(new Insets(0, 0, 20, 0));
+        vBoxLoading.setPadding(new Insets(0, 0, 15, 0));
 
         StackPane stackPane = new StackPane(imageView, vBoxLoading);
 
